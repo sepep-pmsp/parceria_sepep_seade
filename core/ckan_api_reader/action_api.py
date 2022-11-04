@@ -8,10 +8,12 @@ class CkanActionApiRequest:
 
     DOMAIN = DOMAIN
 
-    def __init__(self, domain = DOMAIN):
+    def __init__(self, domain = DOMAIN, verify=False):
 
         build_url = UrlBuildeR(domain)
         self.build_url = partial(build_url, namespace='action')
+        #geralmente as APIs do CKAN não tem certificado SSL
+        self.verify=verify
 
     def assert_success(self, json_resp):
 
@@ -20,7 +22,7 @@ class CkanActionApiRequest:
     def __get_endpoint(self, endpoint: str, **params):
 
         url = self.build_url(endpoint=endpoint, **params)
-        resp = json_get_request(url)
+        resp = json_get_request(url, verify=self.verify)
 
         self.assert_success(resp)
 
