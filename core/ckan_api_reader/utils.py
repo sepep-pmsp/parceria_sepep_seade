@@ -46,5 +46,5 @@ def json_get_request(url, verify=False):
     #muitas apis do CKAN não tem SSL configurado   
     with requests.get(url, verify=verify) as r:
         if not r.status_code==200:
-            raise RuntimeError(f'Erro na requisição. Status code: {r.status_code}')
+            raise RuntimeError(f'Erro na requisição. Status code: {r.status_code}: {r.reason}')
         return r.json()
