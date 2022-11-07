@@ -1,4 +1,5 @@
 import requests
+from inspect import isclass
 
 class UrlBuildeR:
 
@@ -48,3 +49,13 @@ def json_get_request(url, verify=False):
         if not r.status_code==200:
             raise RuntimeError(f'Erro na requisição. Status code: {r.status_code}: {r.reason}')
         return r.json()
+
+def public_methods_set(class_)->set:
+
+    if not isclass:
+        raise ValueError('Class_ must be a class')
+
+    method_list = [func for func in dir(class_) 
+                if callable(getattr(class_, func)) and not func.startswith("__")]
+
+    return set(method_list)

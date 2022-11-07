@@ -1,10 +1,13 @@
 
-from typing import Union, Callable
+from typing import Union, Callable, List
+import re
+from re import Pattern as RePattern
+from .utils import public_methods_set
 
 class FilterbyFormat:
 
 
-    def is_format(resource: dict, format_: str)->bool:
+    def is_format(self, resource: dict, format_: str)->bool:
     
         r_format = resource.get('format')
         
@@ -17,9 +20,11 @@ class FilterbyFormat:
         return r_format == format_
     
     
-    def format_in(resource: dict, formats : list)->bool:
+    def format_in(self, resource: dict, formats : list)->bool:
         
         formats = set(f.lower().strip() for f in formats)
+        
+        r_format = resource.get('format')
         
         if r_format is None:
             return False
@@ -35,8 +40,90 @@ class FilterbyFormat:
         
         return self.format_in
 
-    def __call__(self, resource_list: list, format_: Union[str, list]):
+    def __call__(self, resource: dict, format_: Union[str, list])->bool:
 
         filter_funct = self.solve_format(format_)
 
-        return [res for res in resource_list if filter_funct(res, format_)]
+        return filter_funct(resource, format_)
+
+
+class SearchByText:
+
+    allowed_attrs = {'description', 'name'}
+
+    def __init__(self, case_sensitive = False):
+
+        self.case_sensitive = case_sensitive
+        #all public methods must implement a search operation
+        self.search_operations = public_methods_set(self)
+
+    def __extract_txt_val(self, resource: dict, attr: str)->str:
+
+        if attr not in self.allowed_attrs:
+            raise ValueError(f'Attr must be in {self.allowed_attrs}')
+
+        return resource.get(attr, '')
+    
+    def __lower_txt(self, search_text: str, txt_val: str, case_sensitive = None)->List[str]:
+
+
+        case_sensitive = case_sensitive or self.case_sensitive
+        if not case_sensitive:
+            search_text = search_text.lower()
+            txt_val = txt_val.lower()
+
+        return search_text.strip(), txt_val.strip()
+
+    def __compile_re(self, string: str)->bool:
+
+        if isinstance(string, RePattern):
+            return string
+        
+        return re.compile(string)
+
+
+    def equals(self, txt_val: str, search_text: str, case_sensitive = None)->bool:
+
+        search_text, txt_val = self.__lower_txt(search_text, txt_val, 
+                                                case_sensitive)
+
+        return search_text == txt_val
+
+    def contains(self, txt_val: str, search_text: str, case_sensitive = None)->bool:
+
+        search_text, txt_val = self.__lower_txt(search_text, txt_val, 
+                                                case_sensitive)
+
+        return search_text in txt_val
+
+    def regex(self, txt_val: str, search_patt: RePattern,
+                    case_sensitive = None)->bool:
+
+        if not isinstance(search_patt, RePattern):
+            raise ValueError('Search pattern must be pre-compiled')
+
+        #should never change re pattern casing otherwise regex will change
+        _, txt_val = self.__lower_txt('', txt_val, case_sensitive)
+        
+        if re.search(search_patt, txt_val):
+            return True
+        return False
+
+    def __call__(self, resource: dict, search_string: str, attr:str='description', 
+                     how:str='equals', case_sensitive=None)->bool:
+
+        filter_func = getattr(self, how)
+        txt_val = self.__extract_txt_val(resource, attr)
+
+        if how == 'regex':
+            search_string = self.__compile_re(search_string)
+            print(search_string)
+        
+        return filter_func(txt_val, search_string, case_sensitive)
+
+
+        
+
+    
+
+
