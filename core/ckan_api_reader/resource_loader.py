@@ -4,10 +4,10 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import json
 
-class ResourceDownloader:
+class ResourceParser:
 
-    def __init__(self, csv_params= None, xl_params= None, html_params=None, 
-                txt_params=None, json_params=None, verify_ssl=False, verbose=False):
+    def __init__(self, csv_params = None, xl_params=None, html_params=None,
+                txt_params=None, json_params=None):
 
         self.params = {
                     'csv' : csv_params or {},
@@ -16,18 +16,6 @@ class ResourceDownloader:
                     'txt' : txt_params or {},
                     'json' : json_params or {}
                     }
-
-        #geralmente as APIs do CKAN não tem certificado ssl
-        self.verify = verify_ssl
-        self.verbose = verbose
-
-
-    def get_mime_type(self, resource):
-
-        mime_type = resource.get('format', '')
-        mime_type = mime_type.lower().strip()
-
-        return mime_type
 
     def parse_csv(self, response, **params):
 
@@ -73,7 +61,30 @@ class ResourceDownloader:
         parse_func = parse_funcs.get(mime_type, self.return_content)
 
         return parse_func(response, **params)
-        
+
+    def __call__(self, response, mime_type, **params):
+
+        return self.parse_response(response, mime_type, **params)
+
+class ResourceDownloader:
+
+    def __init__(self, csv_params= None, xl_params= None, html_params=None, 
+                txt_params=None, json_params=None, verify_ssl=False, verbose=False):
+
+        #geralmente as APIs do CKAN não tem certificado ssl
+        self.verify = verify_ssl
+        self.verbose = verbose
+
+        self.parse_response = ResourceParser(csv_params, xl_params, html_params,
+                txt_params, json_params)
+
+
+    def get_mime_type(self, resource):
+
+        mime_type = resource.get('format', '')
+        mime_type = mime_type.lower().strip()
+
+        return mime_type
 
     def download_resource(self, resource, verify=False, **params):
 
