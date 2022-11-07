@@ -1,14 +1,10 @@
 from functools import partial
 from .utils import UrlBuildeR, json_get_request
-from .ckan_config import DOMAIN
-
 
 
 class CkanActionApiRequest:
 
-    DOMAIN = DOMAIN
-
-    def __init__(self, domain = DOMAIN, verify=False):
+    def __init__(self, domain , verify=False):
 
         build_url = UrlBuildeR(domain)
         self.build_url = partial(build_url, namespace='action')
