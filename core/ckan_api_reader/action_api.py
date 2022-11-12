@@ -1,5 +1,6 @@
 from functools import partial
 from .utils import UrlBuildeR, json_get_request
+import urllib3
 
 
 class CkanActionApiRequest:
@@ -10,6 +11,12 @@ class CkanActionApiRequest:
         self.build_url = partial(build_url, namespace='action')
         #geralmente as APIs do CKAN não tem certificado SSL
         self.verify=verify
+        self.disable_ssl_warning()
+
+    def disable_ssl_warning(self):
+
+        if not self.verify:
+            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
     def assert_success(self, json_resp):
 
