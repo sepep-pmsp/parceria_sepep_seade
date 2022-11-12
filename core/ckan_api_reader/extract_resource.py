@@ -85,8 +85,6 @@ class ListResources:
 
         self.__solve__filters(filter_funcs, ad_hoc_filters)
 
-        print(filter_funcs)
-
         resources = self.lst_resources(pkg_name, filter_funcs)
 
         
