@@ -1,0 +1,1 @@
+from .scripts.pib_municipal.etl import ETL as PibMunicipal
