@@ -9,7 +9,8 @@ class Load:
     def __init__(self)->None:
 
         self.data_folder = solve_path('pib_municipal', parent=DATA_FOLDER)
-        self.save_df_as_csv = partial(save_df_as_csv, folder=self.data_folder)
+        self.save_df_as_csv = partial(save_df_as_csv, folder=self.data_folder, 
+                            encoding='cp-1252', decimal=',')
 
     
     def solve_csv_fname(self, ano: str, fname:str)->str:

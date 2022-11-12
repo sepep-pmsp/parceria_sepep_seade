@@ -70,6 +70,17 @@ class Transform:
                 df[col] = df[col].astype(float)
         return df
 
+    def multiply_by_thousands(self, df:pd.DataFrame)->pd.DataFrame:
+        '''Valores do PIB nos arquivos originais estão em mil reais.
+        Vamos colocar na unidade padrão, em Reais, para facilitar análises futuras.'''
+
+        df = df.copy()
+        skip_cols = {'municipio', 'ano'}
+        for col in df.columns:
+            if col not in skip_cols:
+                df[col] = df[col] * 1000
+        return df
+
     def add_year_column(self, df:pd.DataFrame, ano: str)->pd.DataFrame:
 
         df = df.copy()
@@ -83,6 +94,7 @@ class Transform:
         df = self.bound_data(df)
         df = self.col_to_float(df)
         df = self.add_year_column(df, ano)
+        df = self.multiply_by_thousands(df)
         
         return df
 
