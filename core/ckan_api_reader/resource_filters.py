@@ -42,6 +42,9 @@ class FilterbyFormat:
 
     def __call__(self, resource: dict, format_: Union[str, list])->bool:
 
+        if format_ is None:
+            return True
+
         filter_funct = self.solve_format(format_)
 
         return filter_funct(resource, format_)
@@ -109,10 +112,17 @@ class SearchByText:
             return True
         return False
 
-    def __call__(self, resource: dict, search_string: str, attr:str='description', 
-                     how:str='equals', case_sensitive=None)->bool:
+    def __call__(self, resource: dict, search_string: Union[str, None], attr:str=None, 
+                     how:str=None, case_sensitive:bool=None)->bool:
 
+        if search_string is None:
+            return True
+
+        how = how or 'equals'
         filter_func = getattr(self, how)
+
+        if attr is None:
+            attr ='description'
         txt_val = self.__extract_txt_val(resource, attr)
 
         if how == 'regex':

@@ -87,7 +87,8 @@ class ResourceDownloader:
         return mime_type
 
     def download_resource(self, resource, verify=False, **params):
-
+        
+        verify = verify or self.verify
         url = resource.get('url')
         if url:
 
