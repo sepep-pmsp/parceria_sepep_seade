@@ -127,7 +127,6 @@ class SearchByText:
 
         if how == 'regex':
             search_string = self.__compile_re(search_string)
-            print(search_string)
         
         return filter_func(txt_val, search_string, case_sensitive)
 
