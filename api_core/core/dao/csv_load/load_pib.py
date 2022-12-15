@@ -1,7 +1,7 @@
 import pandas as pd
 from functools import partial
 from config import DATA_FOLDER
-from api.core.utils.fpath import files_by_extension, solve_path
+from api_core.core.utils.fpath import files_by_extension, solve_path
 
 class LoadPibCSV:
 
@@ -93,13 +93,20 @@ class PibCSVDAO:
         if col_name not in cols:
             raise ValueError(f'col_name must be in {cols}')
 
-    def __get_dimension(self, df:pd.DataFrame, col_name:str)->pd.DataFrame:
+    def __standardize_value_col(self, df:pd.DataFrame, col_name:str)->pd.DataFrame:
+
+        df.rename({col_name:'valor'},axis=1, inplace=True)
+
+    def __get_dimension(self, df:pd.DataFrame, col_name:str, standardize:bool=True)->pd.DataFrame:
 
         self.__check_col_name(col_name)
         cols = ['municipio', 'ano']
         cols.append(col_name)
+        df = df[cols]
+        if standardize:
+            self.__standardize_value_col(df, col_name)
 
-        return df[cols]
+        return df
 
     def __only_kwrd_args(self, _):
 
