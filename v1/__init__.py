@@ -1,0 +1,1 @@
+from .endpoints.pib import app as pib_routes
