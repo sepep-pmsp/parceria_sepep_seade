@@ -10,7 +10,7 @@ class Extract:
     
     def get_resource_mdata(self)->list:
 
-        resources = self.ckan('pib-municipal-2002-2018', 
+        resources = self.ckan('pib-municipal-2002-2020', 
                  search_string='pib (para os|por) munic(i|í)pio',
                  how='regex',
                  as_list=True, format_=['xlsx', 'xls'])
@@ -19,7 +19,7 @@ class Extract:
 
     def xls_gen(self)->Generator:
 
-        resources = self.ckan('pib-municipal-2002-2018', 
+        resources = self.ckan('pib-municipal-2002-2020', 
                  search_string='pib (para os|por) munic(i|í)pio',
                  how='regex',
                  as_list=False,
