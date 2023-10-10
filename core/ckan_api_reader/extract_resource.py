@@ -67,7 +67,7 @@ class ListResources:
             return self.gen_return(resources, extract, parser_params)
         
     
-    def __call__(self, pkg_name: dict, format_: Union[str, list]=None, search_string: str=None, 
+    def __call__(self, pkg_name: str, format_: Union[str, list]=None, search_string: str=None, 
                     how: str=None, attr: str=None, case_sensitive: bool=None, extract:bool=False,
                     as_list:bool=False, parser_params:dict=None, ad_hoc_filters:Union[list, Callable]=None)->list:
         
