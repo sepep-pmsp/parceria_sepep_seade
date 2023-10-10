@@ -1,2 +1,1 @@
-from .extract_resource import ListResources
-from .load_resource import ResourceDownloader
+from .extract_resource import ListResources as Ckan
