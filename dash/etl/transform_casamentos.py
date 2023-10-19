@@ -88,6 +88,15 @@ class Transformer:
         df['ano'] = ano
 
         return df
+    
+    def casamentos_destino_no_estado_sp(self, df:pd.DataFrame)->pd.DataFrame:
+
+        filtro = df['destino'].astype(str).str.startswith(f'{self.codigo_ibge_estado_sp}')
+
+        filtrado = self.__filter(df, filtro)
+
+        return filtrado
+
 
     def pipeline(self, df:pd.DataFrame)->pd.DataFrame:
 
@@ -97,5 +106,6 @@ class Transformer:
         df = self.remover_casamentos_sp_para_sp(df)
         df = self.casamentos_com_sp_na_origem(df)
         df = self.contagem_casamentos_destino(df)
+        df = self.casamentos_destino_no_estado_sp(df)
 
         return df
