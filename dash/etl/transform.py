@@ -54,6 +54,27 @@ class Transformer:
 
         return df_filtrado
     
+    def casamentos_com_sp_na_origem(self, df:pd.DataFrame)->pd.DataFrame:
+
+        cj1_sp = df[df['cod_residencia_cj1']==self.codigo_ibge_cidade_sp].copy()
+        cj2_sp = df[df['cod_residencia_cj2']==self.codigo_ibge_cidade_sp].copy()
+
+
+        cj1_sp['origem'] = cj1_sp['cod_residencia_cj1']
+        cj2_sp['origem'] = cj2_sp['cod_residencia_cj2']
+
+        cj1_sp['destino'] = cj1_sp['cod_residencia_cj2']
+        cj2_sp['destino'] = cj2_sp['cod_residencia_cj1']
+
+        colunas = ['origem', 'destino', 'ano_casamento', 'municipio_realiz_casamento']
+
+        cj1_sp = cj1_sp[colunas]
+        cj2_sp = cj2_sp[colunas]
+
+        final = pd.concat([cj1_sp, cj2_sp], axis=0)
+
+        return final
+
 
     def pipeline(self, df:pd.DataFrame)->pd.DataFrame:
 
@@ -61,5 +82,6 @@ class Transformer:
         df = self.rename_cols(df)
         df = self.filtrar_casamentos_paulistanos(df)
         df = self.remover_casamentos_sp_para_sp(df)
+        df = self.casamentos_com_sp_na_origem(df)
 
         return df
