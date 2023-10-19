@@ -35,3 +35,12 @@ class Transformer:
         df_filtrado = df[filtro].copy().reset_index(drop=True)
 
         return df_filtrado
+    
+
+    def pipeline(self, df:pd.DataFrame)->pd.DataFrame:
+
+        df = self.filter_cols(df)
+        df = self.rename_cols(df)
+        df = self.filtrar_casamentos_paulistanos(df)
+
+        return df
