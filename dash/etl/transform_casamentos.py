@@ -1,4 +1,4 @@
-from .extract import Extractor
+from .extract_casamentos import Extractor
 import pandas as pd
 from typing import Tuple
 
