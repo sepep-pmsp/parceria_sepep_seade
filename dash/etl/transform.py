@@ -1,5 +1,6 @@
 from .extract import Extractor
 import pandas as pd
+from typing import Tuple
 
 class Transformer:
 
@@ -26,13 +27,30 @@ class Transformer:
 
         return df.rename(self.colunas_mapper, axis=1)
     
+    def __filter(self, df:pd.DataFrame, filtro:Tuple[bool])->pd.DataFrame:
+
+        df_filtrado = df[filtro].copy().reset_index(drop=True)
+
+        return df_filtrado
 
     def filtrar_casamentos_paulistanos(self, df:pd.DataFrame)->pd.DataFrame:
 
         filtro = ((df['cod_residencia_cj1']==self.codigo_ibge_cidade_sp)|
                   (df['cod_residencia_cj2']==self.codigo_ibge_cidade_sp))
         
-        df_filtrado = df[filtro].copy().reset_index(drop=True)
+        df_filtrado = self.__filter(df, filtro)
+
+        return df_filtrado
+    
+    def remover_casamentos_sp_para_sp(self, df:pd.DataFrame)->pd.DataFrame:
+
+        filtro = (
+                (df['cod_residencia_cj1']==self.codigo_ibge_cidade_sp)
+                &
+                (df['cod_residencia_cj2']==self.codigo_ibge_cidade_sp)
+                )
+        
+        df_filtrado = self.__filter(df, ~filtro)
 
         return df_filtrado
     
@@ -42,5 +60,6 @@ class Transformer:
         df = self.filter_cols(df)
         df = self.rename_cols(df)
         df = self.filtrar_casamentos_paulistanos(df)
+        df = self.remover_casamentos_sp_para_sp(df)
 
         return df
