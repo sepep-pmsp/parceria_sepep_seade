@@ -44,6 +44,17 @@ class Transformer:
 
         return gdf
     
+    def geometry_to_lat_lon(self, gdf:gpd.GeoDataFrame)->gpd.GeoDataFrame:
+
+        gdf = gdf.copy()
+
+        gdf['lon'] = gdf.geometry.x
+        gdf['lat'] = gdf.geometry.y
+
+        gdf.drop('geometry', axis=1, inplace=True)
+
+        return gdf
+    
     def pipeline(self):
 
         gdf = self.extract()
@@ -53,6 +64,7 @@ class Transformer:
         gdf = self.centroid(gdf)
         gdf = self.to_wgs_84(gdf)
         gdf = self.cd_municipio_ibge_to_int(gdf)
+        gdf = self.geometry_to_lat_lon(gdf)
 
         return gdf
     

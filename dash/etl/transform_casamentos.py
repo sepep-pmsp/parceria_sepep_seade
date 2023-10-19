@@ -1,4 +1,5 @@
 from .extract_casamentos import Extractor
+from .load_shape_municipios import Load
 import pandas as pd
 from typing import Tuple
 
@@ -13,10 +14,13 @@ class Transformer:
     codigo_ibge_estado_sp = 35
     codigo_ibge_cidade_sp = 3550308
 
-    def __init__(self):
+    def __init__(self, verbose:bool=True):
 
         self.extract = Extractor()
         self.resources_gen = self.extract()
+        self.load_shape = Load(verbose)
+
+        self.shp_mun = self.load_shape()
 
     def filter_cols(self, df:pd.DataFrame)->pd.DataFrame:
 
@@ -96,7 +100,36 @@ class Transformer:
         filtrado = self.__filter(df, filtro)
 
         return filtrado
+    
+    def lat_lon_destino(self, df:pd.DataFrame)->pd.DataFrame:
 
+        merged = pd.merge(self.shp_mun, df, left_on='cd_municipio_ibge', right_on='destino', how='right')
+        merged.drop('cd_municipio_ibge', axis=1, inplace=True)
+
+        merged.rename({'lat' : 'lat_destino', 'lon' : 'lon_destino',
+                       'nome_municipio' : 'nome_municipio_destino'},
+                      axis=1, inplace=True)
+
+        return merged
+    
+    def lat_lon_origem(self, df:pd.DataFrame)->pd.DataFrame:
+
+        df = df.copy()
+        
+        sp = self.shp_mun[self.shp_mun['cd_municipio_ibge']==3550308]
+        lon = sp['lon'].values[0]
+        lat = sp['lat'].values[0]
+
+        df['lon_origem'] = lon
+        df['lat_origem'] = lat
+
+        return df
+    
+    def dropar_estado_sp(self, df:pd.DataFrame)->pd.DataFrame:
+
+        df = df[df['destino']!=3500000].reset_index(drop=True)
+
+        return df
 
     def pipeline(self, df:pd.DataFrame)->pd.DataFrame:
 
@@ -107,6 +140,9 @@ class Transformer:
         df = self.casamentos_com_sp_na_origem(df)
         df = self.contagem_casamentos_destino(df)
         df = self.casamentos_destino_no_estado_sp(df)
+        df = self.lat_lon_destino(df)
+        df = self.lat_lon_origem(df)
+        df = self.dropar_estado_sp(df)
 
         return df
     

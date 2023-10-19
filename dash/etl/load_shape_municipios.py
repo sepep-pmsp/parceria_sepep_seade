@@ -1,6 +1,7 @@
 from .transform_shape_municipios import Transformer
 import os
 import geopandas as gpd
+import pandas as pd
 from config import DATA_FOLDER
 
 class Load:
@@ -22,7 +23,7 @@ class Load:
 
     def load_file_final(self)->gpd.GeoDataFrame:
 
-        return gpd.read_parquet(self.file_final_path)
+        return pd.read_parquet(self.file_final_path)
     
     def save_file_final(self, gdf:gpd.GeoDataFrame)->None:
 
@@ -38,3 +39,7 @@ class Load:
         self.save_file_final(gdf)
 
         return gdf
+    
+    def __call__(self)->gpd.GeoDataFrame:
+
+        return self.pipeline()
