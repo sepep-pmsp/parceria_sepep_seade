@@ -8,7 +8,6 @@ class Transformer:
         'anoreferencia' : 'ano_casamento',
         'codrescj1' : 'cod_residencia_cj1',
         'codrescj2' : 'cod_residencia_cj2',
-        'codmunreg' : 'municipio_realiz_casamento'
     }
 
     codigo_ibge_estado_sp = 35
@@ -66,7 +65,7 @@ class Transformer:
         cj1_sp['destino'] = cj1_sp['cod_residencia_cj2']
         cj2_sp['destino'] = cj2_sp['cod_residencia_cj1']
 
-        colunas = ['origem', 'destino', 'ano_casamento', 'municipio_realiz_casamento']
+        colunas = ['origem', 'destino', 'ano_casamento']
 
         cj1_sp = cj1_sp[colunas]
         cj2_sp = cj2_sp[colunas]
@@ -76,6 +75,20 @@ class Transformer:
         return final
 
 
+    def contagem_casamentos_destino(self, df:pd.DataFrame)->pd.DataFrame:
+
+
+        #pegando o ano para colocar depois
+        ano = df['ano_casamento'].unique()[0]
+
+        df['total_casamentos']=1
+        df = df.groupby(['origem', 'destino']).sum().reset_index()[['origem', 'destino', 'total_casamentos']]
+
+        #colocando o ano
+        df['ano'] = ano
+
+        return df
+
     def pipeline(self, df:pd.DataFrame)->pd.DataFrame:
 
         df = self.filter_cols(df)
@@ -83,5 +96,6 @@ class Transformer:
         df = self.filtrar_casamentos_paulistanos(df)
         df = self.remover_casamentos_sp_para_sp(df)
         df = self.casamentos_com_sp_na_origem(df)
+        df = self.contagem_casamentos_destino(df)
 
         return df
