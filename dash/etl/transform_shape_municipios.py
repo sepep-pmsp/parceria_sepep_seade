@@ -36,6 +36,14 @@ class Transformer:
 
         return gdf.to_crs(epsg=4326)
     
+    def cd_municipio_ibge_to_int(self, gdf:gpd.GeoDataFrame)->gpd.GeoDataFrame:
+
+        gdf = gdf.copy()
+
+        gdf['cd_municipio_ibge'] = gdf['cd_municipio_ibge'].astype(int)
+
+        return gdf
+    
     def pipeline(self):
 
         gdf = self.extract()
@@ -44,6 +52,7 @@ class Transformer:
         gdf = self.to_sirgas_2000_utm_23_s(gdf)
         gdf = self.centroid(gdf)
         gdf = self.to_wgs_84(gdf)
+        gdf = self.cd_municipio_ibge_to_int(gdf)
 
         return gdf
     
