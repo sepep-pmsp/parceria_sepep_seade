@@ -7,4 +7,5 @@ load = Load()
 df = load()
 mapa_arco = gerar_pydeck(df)
 
+st.title('Casamentos da cidade de São Paulo')
 st.pydeck_chart(mapa_arco)
