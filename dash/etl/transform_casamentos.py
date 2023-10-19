@@ -109,3 +109,8 @@ class Transformer:
         df = self.casamentos_destino_no_estado_sp(df)
 
         return df
+    
+    def __call__(self)->pd.DataFrame:
+
+        for df in self.resources_gen:
+            yield self.pipeline(df)
