@@ -1,0 +1,646 @@
+;cod_municipio;nome_municipio;regiao_administrativa;regiao_metropolitana;habitantes;PIB;nascidos_vivos
+0;3500105;Adamantina;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;33869;R$ 1.256.561.606;32.0
+1;3500204;Adolfo;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;3436;R$ 136.701.363;131.0
+2;3500303;Aguaí;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;35885;R$ 1.152.443.311;20.0
+3;3500402;Águas da Prata;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;7807;R$ 186.768.100;120.0
+4;3500501;Águas de Lindóia;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;18438;R$ 496.876.915;20.0
+5;3500550;Águas de Santa Bárbara;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;5957;R$ 200.526.489;82.0
+6;3500600;Águas de São Pedro;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;3144;R$ 137.976.387;31.0
+7;3500709;Agudos;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;36255;R$ 2.311.348.096;12.0
+8;3500758;Alambari;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;5856;R$ 121.555.881;157.0
+9;3500808;Alfredo Marcondes;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;3924;R$ 109.884.835;27.0
+10;3500907;Altair;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;4052;R$ 111.679.064;21.0
+11;3501004;Altinópolis;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;15547;R$ 651.335.252;12.0
+12;3501103;Alto Alegre;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;4006;R$ 116.811.844;37.0
+13;3501152;Alumínio;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;18069;R$ 2.251.140.966;8.0
+14;3501202;Álvares Florence;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;3596;R$ 112.147.987;78.0
+15;3501301;Álvares Machado;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;23828;R$ 614.914.747;13.0
+16;3501400;Álvaro de Carvalho;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;5079;R$ 53.333.113;107.0
+17;3501509;Alvinlândia;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;3190;R$ 57.585.363;7.0
+18;3501608;Americana;Região Administrativa de Campinas;Região Metropolitana de Campinas;235075;R$ 12.078.626.874;15.0
+19;3501707;Américo Brasiliense;Região Administrativa Central;Outros municípios do Estado de São Paulo;40676;R$ 1.095.798.527;811.0
+20;3501806;Américo de Campos;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;5730;R$ 109.144.600;140.0
+21;3501905;Amparo;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;69861;R$ 4.616.533.222;18.0
+22;3502002;Analândia;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;4895;R$ 195.982.928;249.0
+23;3502101;Andradina;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;56087;R$ 2.673.256.245;16.0
+24;3502200;Angatuba;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;24697;R$ 1.320.266.583;213.0
+25;3502309;Anhembi;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;6755;R$ 155.148.324;136.0
+26;3502408;Anhumas;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;3983;R$ 82.951.812;20.0
+27;3502507;Aparecida;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;35744;R$ 984.473.932;14.0
+28;3502606;Aparecida d'Oeste;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;4105;R$ 155.886.941;131.0
+29;3502705;Apiaí;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;24711;R$ 719.086.882;12.0
+30;3502754;Araçariguama;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;5515;R$ 3.218.901.682;89.0
+31;3502804;Araçatuba;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;6168;R$ 8.304.184.164;97.0
+32;3502903;Araçoiaba da Serra;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;2469;R$ 976.126.384;706.0
+33;3503000;Aramina;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;228792;R$ 155.702.321;129.0
+34;3503109;Arandu;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;131931;R$ 182.645.594;19.0
+35;3503158;Arapeí;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;21289;R$ 39.882.786;30.0
+36;3503208;Araraquara;Região Administrativa Central;Outros municípios do Estado de São Paulo;190921;R$ 10.680.812.997;5.0
+37;3503307;Araras;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;32846;R$ 6.474.427.590;930.0
+38;3503356;Arco-Íris;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;1806;R$ 84.062.627;498.0
+39;3503406;Arealva;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;8223;R$ 244.287.968;5.0
+40;3503505;Areias;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;3860;R$ 56.804.272;32.0
+41;3503604;Areiópolis;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;10900;R$ 147.089.286;24.0
+42;3503703;Ariranha;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;9378;R$ 968.334.144;32.0
+43;3503802;Artur Nogueira;Região Administrativa de Campinas;Região Metropolitana de Campinas;53224;R$ 1.477.690.002;28.0
+44;3503901;Arujá;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;90958;R$ 7.633.056.192;212.0
+45;3503950;Aspásia;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;1760;R$ 40.018.733;431.0
+46;3504008;Assis;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;101825;R$ 3.734.329.858;7.0
+47;3504107;Atibaia;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;140589;R$ 7.412.329.939;341.0
+48;3504206;Auriflama;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;14478;R$ 325.250.452;677.0
+49;3504305;Avaí;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;5314;R$ 395.872.958;49.0
+50;3504404;Avanhandava;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;12188;R$ 491.139.121;26.0
+51;3504503;Avaré;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;87854;R$ 2.818.750.893;44.0
+52;3504602;Bady Bassitt;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;16441;R$ 466.219.023;401.0
+53;3504701;Balbinos;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;3707;R$ 61.962.408;107.0
+54;3504800;Bálsamo;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;8542;R$ 246.986.061;4.0
+55;3504909;Bananal;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;10691;R$ 203.899.739;19.0
+56;3505005;Barão de Antonina;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;3407;R$ 69.024.444;17.0
+57;3505104;Barbosa;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;7345;R$ 119.432.090;9.0
+58;3505203;Bariri;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;34180;R$ 1.369.293.843;17.0
+59;3505302;Barra Bonita;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;34864;R$ 1.374.943.656;132.0
+60;3505351;Barra do Chapéu;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;5561;R$ 143.899.512;133.0
+61;3505401;Barra do Turvo;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;7709;R$ 109.166.141;27.0
+62;3505500;Barretos;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;118419;R$ 4.989.612.998;27.0
+63;3505609;Barrinha;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;32658;R$ 553.730.471;510.0
+64;3505708;Barueri;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;266236;R$ 51.254.571.962;144.0
+65;3505807;Bastos;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;20296;R$ 978.295.698;1.733
+66;3505906;Batatais;Região Administrativa de Franca;Região Metropolitana de Ribeirão Preto;60502;R$ 2.085.830.301;94.0
+67;3506003;Bauru;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;365523;R$ 15.180.212.056;238.0
+68;3506102;Bebedouro;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;73969;R$ 3.218.916.367;1.486
+69;3506201;Bento de Abreu;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;2966;R$ 208.534.641;287.0
+70;3506300;Bernardino de Campos;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;10793;R$ 301.522.163;10.0
+71;3506359;Bertioga;Região Administrativa de Santos;Região Metropolitana da Baixada Santista;64526;R$ 1.905.000.150;29.0
+72;3506409;Bilac;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;7855;R$ 267.898.583;333.0
+73;3506508;Birigui;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;122161;R$ 3.669.342.865;15.0
+74;3506607;Biritiba-Mirim;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;32683;R$ 995.303.880;432.0
+75;3506706;Boa Esperança do Sul;Região Administrativa Central;Outros municípios do Estado de São Paulo;14658;R$ 362.180.102;112.0
+76;3506805;Bocaina;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;12243;R$ 236.357.656;67.0
+77;3506904;Bofete;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;11194;R$ 204.906.014;43.0
+78;3507001;Boituva;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;57987;R$ 2.985.664.148;44.0
+79;3507100;Bom Jesus dos Perdões;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;24625;R$ 1.089.688.388;256.0
+80;3507159;Bom Sucesso de Itararé;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;3894;R$ 65.301.329;95.0
+81;3507209;Borá;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;811;R$ 68.381.873;23.0
+82;3507308;Boracéia;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;4798;R$ 448.990.318;1.0
+83;3507407;Borborema;Região Administrativa Central;Outros municípios do Estado de São Paulo;15370;R$ 467.279.720;27.0
+84;3507456;Borebi;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;2602;R$ 68.326.906;30.0
+85;3507506;Botucatu;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;142092;R$ 5.089.448.838;13.0
+86;3507605;Bragança Paulista;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;165241;R$ 6.791.315.052;570.0
+87;3507704;Braúna;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;5593;R$ 115.759.805;672.0
+88;3507753;Brejo Alegre;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;2780;R$ 60.572.946;28.0
+89;3507803;Brodowski;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;24132;R$ 805.025.937;7.0
+90;3507902;Brotas;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;24039;R$ 1.019.895.410;106.0
+91;3508009;Buri;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;19819;R$ 666.565.575;117.0
+92;3508108;Buritama;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;16673;R$ 712.089.369;92.0
+93;3508207;Buritizal;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;4323;R$ 233.930.240;59.0
+94;3508306;Cabrália Paulista;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;4306;R$ 81.929.480;13.0
+95;3508405;Cabreúva;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;50112;R$ 5.258.401.575;14.0
+96;3508504;Caçapava;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;32381;R$ 4.562.951.102;209.0
+97;3508603;Cachoeira Paulista;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;18893;R$ 635.940.220;392.0
+98;3508702;Caconde;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;17286;R$ 477.006.124;125.0
+99;3508801;Cafelândia;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;4104;R$ 614.590.060;69.0
+100;3508900;Caiabu;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;101748;R$ 67.985.490;74.0
+101;3509007;Caieiras;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;5642;R$ 4.010.644.151;16.0
+102;3509106;Caiuá;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;78786;R$ 88.898.533;416.0
+103;3509205;Cajamar;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;29116;R$ 20.798.646.107;14.0
+104;3509254;Cajati;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;10124;R$ 1.594.151.938;452.0
+105;3509304;Cajobi;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;25850;R$ 171.372.573;119.0
+106;3509403;Cajuru;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;5832;R$ 691.971.958;29.0
+107;3509452;Campina do Monte Alegre;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;1181555;R$ 137.149.077;101.0
+108;3509502;Campinas;Região Administrativa de Campinas;Região Metropolitana de Campinas;83530;R$ 65.419.716.816;24.0
+109;3509601;Campo Limpo Paulista;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;50307;R$ 2.195.755.540;4.366
+110;3509700;Campos do Jordão;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;4841;R$ 1.276.363.737;314.0
+111;3509809;Campos Novos Paulista;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;12379;R$ 189.704.019;218.0
+112;3509908;Cananéia;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;5120;R$ 262.472.276;26.0
+113;3509957;Canas;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;30010;R$ 112.954.843;53.0
+114;3510005;Cândido Mota;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;2672;R$ 1.391.538.400;28.0
+115;3510104;Cândido Rodrigues;Região Administrativa Central;Outros municípios do Estado de São Paulo;5051;R$ 110.266.045;111.0
+116;3510153;Canitar;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;46521;R$ 157.316.779;8.0
+117;3510203;Capão Bonito;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;20828;R$ 1.129.602.810;31.0
+118;3510302;Capela do Alto;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;54686;R$ 339.377.683;220.0
+119;3510401;Capivari;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;117090;R$ 2.400.351.215;101.0
+120;3510500;Caraguatatuba;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;396447;R$ 3.889.990.988;222.0
+121;3510609;Carapicuíba;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;11712;R$ 6.224.119.623;497.0
+122;3510708;Cardoso;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;29549;R$ 299.674.576;1.891
+123;3510807;Casa Branca;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;2486;R$ 1.053.662.373;27.0
+124;3510906;Cássia dos Coqueiros;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;20937;R$ 254.623.337;86.0
+125;3511003;Castilho;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;117414;R$ 1.167.425.861;2.0
+126;3511102;Catanduva;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;7555;R$ 4.883.915.102;72.0
+127;3511201;Catiguá;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;91646;R$ 134.143.732;411.0
+128;3511300;Cedral;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;8895;R$ 389.261.161;21.0
+129;3511409;Cerqueira César;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;19350;R$ 824.648.863;47.0
+130;3511508;Cerquilho;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;46932;R$ 2.007.346.600;81.0
+131;3511607;Cesário Lange;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;17360;R$ 513.238.411;158.0
+132;3511706;Charqueada;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;17075;R$ 436.864.969;93.0
+133;3511904;Clementina;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;12229;R$ 238.114.855;71.0
+134;3512001;Colina;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;8413;R$ 138.320.470;37.0
+135;3512100;Colômbia;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;17606;R$ 1.232.165.501;81.0
+136;3512209;Conchal;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;6048;R$ 376.596.016;26.0
+137;3512308;Conchas;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;27445;R$ 847.841.836;127.0
+138;3512407;Cordeirópolis;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;17203;R$ 385.263.269;59.0
+139;3512506;Coroados;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;24615;R$ 3.292.605.038;91.0
+140;3512605;Coronel Macedo;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;5971;R$ 199.028.454;7.0
+141;3512704;Corumbataí;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;4839;R$ 127.085.554;19.0
+142;3512803;Cosmópolis;Região Administrativa de Campinas;Região Metropolitana de Campinas;3969;R$ 259.269.813;12.0
+143;3512902;Cosmorama;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;72215;R$ 1.974.320.681;245.0
+144;3513009;Cotia;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;6976;R$ 393.569.643;9.0
+145;3513108;Cravinhos;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;251382;R$ 14.039.984.342;1.259
+146;3513207;Cristais Paulista;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;34637;R$ 1.408.566.248;126.0
+147;3513306;Cruzália;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;8494;R$ 279.639.301;43.0
+148;3513405;Cruzeiro;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;2105;R$ 117.792.841;7.0
+149;3513504;Cubatão;Região Administrativa de Santos;Região Metropolitana da Baixada Santista;80128;R$ 2.671.788.286;285.0
+150;3513603;Cunha;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;130025;R$ 15.918.912.912;429.0
+151;3513702;Descalvado;Região Administrativa Central;Outros municípios do Estado de São Paulo;21660;R$ 297.367.405;78.0
+152;3513801;Diadema;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;32516;R$ 1.857.895.702;129.0
+153;3513850;Dirce Reis;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;405596;R$ 15.057.234.758;1.436
+154;3513900;Divinolândia;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;1715;R$ 65.459.534;8.0
+155;3514007;Dobrada;Região Administrativa Central;Outros municípios do Estado de São Paulo;10865;R$ 338.829.109;39.0
+156;3514106;Dois Córregos;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;8985;R$ 131.493.198;35.0
+157;3514205;Dolcinópolis;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;27151;R$ 754.503.914;107.0
+158;3514304;Dourado;Região Administrativa Central;Outros municípios do Estado de São Paulo;2033;R$ 51.749.244;10.0
+159;3514403;Dracena;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;8466;R$ 653.195.328;26.0
+160;3514502;Duartina;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;45088;R$ 1.368.407.237;162.0
+161;3514601;Dumont;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;11941;R$ 257.271.274;53.0
+162;3514700;Echaporã;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;9659;R$ 282.638.921;34.0
+163;3514809;Eldorado;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;6208;R$ 135.500.053;24.0
+164;3514908;Elias Fausto;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;15331;R$ 323.401.988;63.0
+165;3514924;Elisiário;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;17459;R$ 860.302.142;72.0
+166;3514957;Embaúba;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;3518;R$ 67.868.744;7.0
+167;3515004;Embu das Artes;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;2406;R$ 59.966.380;11.0
+168;3515103;Embu-Guaçu;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;273266;R$ 13.834.413.392;1.098
+169;3515129;Emilianópolis;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;68565;R$ 1.231.417.961;306.0
+170;3515152;Engenheiro Coelho;Região Administrativa de Campinas;Região Metropolitana de Campinas;3069;R$ 70.517.530;6.0
+171;3515186;Espírito Santo do Pinhal;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;20884;R$ 553.914.283;90.0
+172;3515194;Espírito Santo do Turvo;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;42639;R$ 1.661.258.710;143.0
+173;3515202;Estrela d'Oeste;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;4850;R$ 95.256.150;28.0
+174;3515301;Estrela do Norte;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;11156;R$ 347.056.556;34.0
+175;3515350;Euclides da Cunha Paulista;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;8083;R$ 69.541.601;6.0
+176;3515400;Fartura;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;2668;R$ 654.954.448;27.0
+177;3515509;Fernandópolis;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;9549;R$ 132.188.150;79.0
+178;3515608;Fernando Prestes;Região Administrativa Central;Outros municípios do Estado de São Paulo;15679;R$ 428.375.421;292.0
+179;3515657;Fernão;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;5568;R$ 224.806.290;21.0
+180;3515707;Ferraz de Vasconcelos;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;66131;R$ 2.307.920.079;6.0
+181;3515806;Flora Rica;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;1656;R$ 80.927.020;738.0
+182;3515905;Floreal;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;195168;R$ 3.953.315.296;2.0
+183;3516002;Flórida Paulista;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;1575;R$ 39.593.825;9.0
+184;3516101;Florínia;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;2842;R$ 69.448.913;28.0
+185;3516200;Franca;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;12060;R$ 247.035.888;12.0
+186;3516309;Francisco Morato;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;2697;R$ 161.169.007;1.456
+187;3516408;Franco da Rocha;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;343801;R$ 9.908.134.392;877.0
+188;3516507;Gabriel Monteiro;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;176346;R$ 1.722.351.065;696.0
+189;3516606;Gália;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;153903;R$ 3.557.252.453;12.0
+190;3516705;Garça;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;2677;R$ 76.724.795;3.0
+191;3516804;Gastão Vidigal;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;6537;R$ 186.376.746;165.0
+192;3516853;Gavião Peixoto;Região Administrativa Central;Outros municípios do Estado de São Paulo;42385;R$ 1.324.397.694;12.0
+193;3516903;General Salgado;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;4811;R$ 85.877.103;22.0
+194;3517000;Getulina;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;4627;R$ 1.607.937.606;36.0
+195;3517109;Glicério;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;10632;R$ 240.675.624;27.0
+196;3517208;Guaiçara;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;10856;R$ 216.288.436;15.0
+197;3517307;Guaimbê;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;4762;R$ 115.833.423;50.0
+198;3517406;Guaíra;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;5547;R$ 221.647.199;15.0
+199;3517505;Guapiaçu;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;39154;R$ 236.193.347;167.0
+200;3517604;Guapiara;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;12045;R$ 2.563.208.626;76.0
+201;3517703;Guará;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;17832;R$ 718.073.708;54.0
+202;3517802;Guaraçaí;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;21060;R$ 509.879.192;69.0
+203;3517901;Guaraci;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;20907;R$ 573.185.541;28.0
+204;3518008;Guarani d'Oeste;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;11050;R$ 321.462.268;33.0
+205;3518107;Guarantã;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;1917;R$ 396.670.668;9.0
+206;3518206;Guararapes;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;6485;R$ 40.311.703;23.0
+207;3518305;Guararema;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;32160;R$ 187.184.051;120.0
+208;3518404;Guaratinguetá;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;29736;R$ 1.100.341.562;171.0
+209;3518503;Guareí;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;118741;R$ 1.624.892.875;449.0
+210;3518602;Guariba;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;8400;R$ 6.852.330.972;41.0
+211;3518701;Guarujá;Região Administrativa de Santos;Região Metropolitana da Baixada Santista;15844;R$ 268.432.544;142.0
+212;3518800;Guarulhos;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;39285;R$ 1.008.359.541;1.294
+213;3518859;Guatapará;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;318774;R$ 9.265.419.634;6.089
+214;3518909;Guzolândia;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;1361862;R$ 65.849.310.902;36.0
+215;3519006;Herculândia;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;7482;R$ 251.978.918;17.0
+216;3519055;Holambra;Região Administrativa de Campinas;Região Metropolitana de Campinas;5134;R$ 86.220.315;27.0
+217;3519071;Hortolândia;Região Administrativa de Campinas;Região Metropolitana de Campinas;9310;R$ 335.411.887;65.0
+218;3519105;Iacanga;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;14711;R$ 1.281.655.867;981.0
+219;3519204;Iacri;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;233548;R$ 15.549.704.422;46.0
+220;3519253;Iaras;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;11410;R$ 584.594.192;21.0
+221;3519303;Ibaté;Região Administrativa Central;Outros municípios do Estado de São Paulo;6255;R$ 252.521.830;24.0
+222;3519402;Ibirá;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;6943;R$ 161.856.787;157.0
+223;3519501;Ibirarema;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;35044;R$ 1.082.675.148;50.0
+224;3519600;Ibitinga;Região Administrativa Central;Outros municípios do Estado de São Paulo;12132;R$ 268.565.567;23.0
+225;3519709;Ibiúna;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;7570;R$ 214.630.935;247.0
+226;3519808;Icém;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;58860;R$ 1.743.690.091;343.0
+227;3519907;Iepê;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;76867;R$ 2.220.621.131;27.0
+228;3520004;Igaraçu do Tietê;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;8077;R$ 183.278.508;34.0
+229;3520103;Igarapava;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;7943;R$ 367.596.947;91.0
+230;3520202;Igaratá;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;29560;R$ 350.682.757;90.0
+231;3520301;Iguape;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;9354;R$ 1.354.385.825;30.0
+232;3520400;Ilhabela;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;24206;R$ 224.386.915;99.0
+233;3520426;Ilha Comprida;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;29555;R$ 1.080.388.103;141.0
+234;3520442;Ilha Solteira;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;10410;R$ 768.971.311;35.0
+235;3520509;Indaiatuba;Região Administrativa de Campinas;Região Metropolitana de Campinas;25754;R$ 678.419.661;85.0
+236;3520608;Indiana;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;33821;R$ 10.752.019.663;1.021
+237;3520707;Indiaporã;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;245366;R$ 18.344.473.035;19.0
+238;3520806;Inúbia Paulista;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;4771;R$ 84.037.427;20.0
+239;3520905;Ipaussu;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;3847;R$ 104.728.604;9.0
+240;3521002;Iperó;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;3913;R$ 125.745.275;65.0
+241;3521101;Ipeúna;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;14578;R$ 448.605.172;126.0
+242;3521150;Ipiguá;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;34800;R$ 796.372.879;28.0
+243;3521200;Iporanga;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;7711;R$ 914.749.026;12.0
+244;3521309;Ipuã;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;5286;R$ 113.165.478;23.0
+245;3521408;Iracemápolis;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;4424;R$ 63.487.572;64.0
+246;3521507;Irapuã;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;16001;R$ 445.204.845;85.0
+247;3521606;Irapuru;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;23907;R$ 2.067.562.220;22.0
+248;3521705;Itaberá;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;7767;R$ 174.046.959;28.0
+249;3521804;Itaí;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;7295;R$ 104.356.548;75.0
+250;3521903;Itajobi;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;17615;R$ 789.730.330;92.0
+251;3522000;Itaju;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;26725;R$ 905.343.023;64.0
+252;3522109;Itanhaém;Região Administrativa de Santos;Região Metropolitana da Baixada Santista;14602;R$ 915.347.743;17.0
+253;3522158;Itaóca;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;3688;R$ 96.459.433;407.0
+254;3522208;Itapecerica da Serra;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;99751;R$ 2.195.870.952;10.0
+255;3522307;Itapetininga;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;3187;R$ 48.511.987;707.0
+256;3522406;Itapeva;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;171123;R$ 4.331.368.068;686.0
+257;3522505;Itapevi;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;161509;R$ 5.332.508.973;338.0
+258;3522604;Itapira;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;92123;R$ 4.111.521.684;1.199
+259;3522653;Itapirapuã Paulista;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;241150;R$ 12.584.181.048;260.0
+260;3522703;Itápolis;Região Administrativa Central;Outros municípios do Estado de São Paulo;71609;R$ 4.132.858.379;18.0
+261;3522802;Itaporanga;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;4214;R$ 48.697.107;101.0
+262;3522901;Itapuí;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;41648;R$ 1.564.822.996;50.0
+263;3523008;Itapura;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;14710;R$ 386.449.781;4.0
+264;3523107;Itaquaquecetuba;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;13913;R$ 871.497.679;11.0
+265;3523206;Itararé;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;4965;R$ 107.149.968;1.691
+266;3523305;Itariri;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;374997;R$ 7.671.902.365;213.0
+267;3523404;Itatiba;Região Administrativa de Campinas;Região Metropolitana de Campinas;49149;R$ 1.104.135.897;53.0
+268;3523503;Itatinga;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;17442;R$ 357.331.104;439.0
+269;3523602;Itirapina;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;119084;R$ 7.161.563.078;84.0
+270;3523701;Itirapuã;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;20752;R$ 427.720.157;62.0
+271;3523800;Itobi;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;17284;R$ 706.029.955;23.0
+272;3523909;Itu;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;6311;R$ 132.522.479;21.0
+273;3524006;Itupeva;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;7608;R$ 157.854.542;739.0
+274;3524105;Ituverava;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;170938;R$ 9.209.595.039;262.0
+275;3524204;Jaborandi;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;60255;R$ 8.498.522.667;141.0
+276;3524303;Jaboticabal;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;40333;R$ 1.809.032.362;20.0
+277;3524402;Jacareí;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;6681;R$ 153.342.834;242.0
+278;3524501;Jaci;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;74352;R$ 3.170.163.454;919.0
+279;3524600;Jacupiranga;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;229163;R$ 14.114.972.368;34.0
+280;3524709;Jaguariúna;Região Administrativa de Campinas;Região Metropolitana de Campinas;7052;R$ 559.306.972;81.0
+281;3524808;Jales;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;17237;R$ 519.612.447;238.0
+282;3524907;Jambeiro;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;55477;R$ 11.504.186.763;165.0
+283;3525003;Jandira;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;47242;R$ 1.773.928.116;22.0
+284;3525102;Jardinópolis;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;6272;R$ 269.800.866;517.0
+285;3525201;Jarinu;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;124940;R$ 4.596.896.835;176.0
+286;3525300;Jaú;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;43258;R$ 1.384.172.257;158.0
+287;3525409;Jeriquara;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;30330;R$ 2.603.548.811;469.0
+288;3525508;Joanópolis;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;148613;R$ 5.051.020.821;18.0
+289;3525607;João Ramalho;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;3141;R$ 131.524.169;42.0
+290;3525706;José Bonifácio;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;12720;R$ 231.982.333;23.0
+291;3525805;Júlio Mesquita;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;4404;R$ 131.711.851;167.0
+292;3525854;Jumirim;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;36229;R$ 1.340.585.806;22.0
+293;3525904;Jundiaí;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;4658;R$ 56.184.161;12.0
+294;3526001;Junqueirópolis;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;3343;R$ 172.323.516;1.845
+295;3526100;Juquiá;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;409439;R$ 51.235.049.644;65.0
+296;3526209;Juquitiba;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;20174;R$ 740.517.079;78.0
+297;3526308;Lagoinha;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;18856;R$ 361.211.895;131.0
+298;3526407;Laranjal Paulista;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;30579;R$ 547.311.783;19.0
+299;3526506;Lavínia;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;4821;R$ 69.423.364;94.0
+300;3526605;Lavrinhas;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;28042;R$ 1.253.935.132;11.0
+301;3526704;Leme;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;8476;R$ 182.199.822;32.0
+302;3526803;Lençóis Paulista;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;7218;R$ 120.677.950;354.0
+303;3526902;Limeira;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;101693;R$ 3.767.429.203;279.0
+304;3527009;Lindóia;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;66695;R$ 4.257.629.799;1.004
+305;3527108;Lins;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;297662;R$ 13.702.173.364;30.0
+306;3527207;Lorena;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;7789;R$ 220.924.387;312.0
+307;3527256;Lourdes;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;75318;R$ 6.290.470.756;350.0
+308;3527306;Louveira;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;86952;R$ 3.104.752.935;7.0
+309;3527405;Lucélia;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;2183;R$ 46.224.135;241.0
+310;3527504;Lucianópolis;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;48965;R$ 17.852.711.726;54.0
+311;3527603;Luís Antônio;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;21092;R$ 516.660.243;10.0
+312;3527702;Luiziânia;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;2264;R$ 75.136.887;42.0
+313;3527801;Lupércio;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;14358;R$ 1.450.489.198;14.0
+314;3527900;Lutécia;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;5813;R$ 83.669.479;18.0
+315;3528007;Macatuba;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;4428;R$ 92.684.017;15.0
+316;3528106;Macaubal;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;2615;R$ 94.682.544;73.0
+317;3528205;Macedônia;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;16981;R$ 758.205.552;26.0
+318;3528304;Magda;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;7738;R$ 186.629.964;14.0
+319;3528403;Mairinque;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;3562;R$ 87.066.605;4.0
+320;3528502;Mairiporã;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;3076;R$ 99.703.610;192.0
+321;3528601;Manduri;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;46569;R$ 2.144.227.207;333.0
+322;3528700;Marabá Paulista;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;100034;R$ 1.931.084.246;47.0
+323;3528809;Maracaí;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;9562;R$ 260.130.318;11.0
+324;3528858;Marapoama;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;4942;R$ 122.178.966;61.0
+325;3528908;Mariápolis;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;13526;R$ 497.377.033;10.0
+326;3529005;Marília;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;2925;R$ 295.810.202;13.0
+327;3529104;Marinópolis;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;3979;R$ 65.623.027;936.0
+328;3529203;Martinópolis;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;232599;R$ 8.700.475.586;7.0
+329;3529302;Matão;Região Administrativa Central;Outros municípios do Estado de São Paulo;2096;R$ 39.819.308;95.0
+330;3529401;Mauá;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;25778;R$ 674.231.641;256.0
+331;3529500;Mendonça;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;80174;R$ 4.415.471.227;1.485
+332;3529609;Meridiano;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;463338;R$ 17.127.382.576;17.0
+333;3529658;Mesópolis;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;5069;R$ 298.917.011;13.0
+334;3529708;Miguelópolis;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;3725;R$ 406.438.216;5.0
+335;3529807;Mineiros do Tietê;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;1893;R$ 74.356.044;77.0
+336;3529906;Miracatu;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;21500;R$ 1.047.653.218;32.0
+337;3530003;Mira Estrela;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;12641;R$ 208.464.303;92.0
+338;3530102;Mirandópolis;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;2949;R$ 71.546.749;8.0
+339;3530201;Mirante do Paranapanema;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;19961;R$ 422.678.077;95.0
+340;3530300;Mirassol;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;28715;R$ 689.322.609;51.0
+341;3530409;Mirassolândia;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;17831;R$ 549.595.077;259.0
+342;3530508;Mococa;Região Administrativa de Campinas;Região Metropolitana de Ribeirão Preto;58112;R$ 2.259.473.838;20.0
+343;3530607;Mogi das Cruzes;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;4736;R$ 162.532.681;238.0
+344;3530706;Mogi Guaçu;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;66719;R$ 2.611.201.225;1.815
+345;3530805;Mogi Mirim;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;436883;R$ 16.964.026.510;577.0
+346;3530904;Mombuca;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;149071;R$ 6.168.231.151;342.0
+347;3531001;Monções;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;90657;R$ 5.044.266.778;20.0
+348;3531100;Mongaguá;Região Administrativa de Santos;Região Metropolitana da Baixada Santista;3338;R$ 100.670.000;4.0
+349;3531209;Monte Alegre do Sul;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;55216;R$ 64.783.996;261.0
+350;3531308;Monte Alto;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;7792;R$ 1.218.644.642;25.0
+351;3531407;Monte Aprazível;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;48469;R$ 220.385.343;164.0
+352;3531506;Monte Azul Paulista;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;23561;R$ 2.171.450.256;71.0
+353;3531605;Monte Castelo;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;18131;R$ 726.388.269;75.0
+354;3531704;Monteiro Lobato;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;3985;R$ 578.989.781;16.0
+355;3531803;Monte Mor;Região Administrativa de Campinas;Região Metropolitana de Campinas;60555;R$ 118.889.293;17.0
+356;3531902;Morro Agudo;Região Administrativa de Franca;Região Metropolitana de Ribeirão Preto;4491;R$ 3.683.620.445;303.0
+357;3532009;Morungaba;Região Administrativa de Campinas;Região Metropolitana de Campinas;2173;R$ 72.883.977;107.0
+358;3532058;Motuca;Região Administrativa Central;Outros municípios do Estado de São Paulo;32603;R$ 1.329.812.180;61.0
+359;3532108;Murutinga do Sul;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;13359;R$ 551.379.051;3.0
+360;3532157;Nantes;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;4665;R$ 110.809.071;12.0
+361;3532207;Narandiba;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;4283;R$ 85.269.850;5.0
+362;3532306;Natividade da Serra;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;3103;R$ 126.320.667;18.0
+363;3532405;Nazaré Paulista;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;4888;R$ 262.527.862;17.0
+364;3532504;Neves Paulista;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;6703;R$ 86.047.289;72.0
+365;3532603;Nhandeara;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;18611;R$ 414.383.927;24.0
+366;3532702;Nipoã;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;8592;R$ 243.933.066;33.0
+367;3532801;Nova Aliança;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;10760;R$ 353.567.042;25.0
+368;3532827;Nova Campina;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;5014;R$ 92.934.640;21.0
+369;3532843;Nova Canaã Paulista;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;6487;R$ 232.640.579;40.0
+370;3532868;Nova Castilho;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;9787;R$ 137.402.762;3.0
+371;3532900;Nova Europa;Região Administrativa Central;Outros municípios do Estado de São Paulo;1921;R$ 45.892.811;1.0
+372;3533007;Nova Granada;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;1180;R$ 55.116.148;55.0
+373;3533106;Nova Guataporanga;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;10863;R$ 347.437.753;77.0
+374;3533205;Nova Independência;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;21054;R$ 482.455.406;11.0
+375;3533254;Novais;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;2192;R$ 36.374.548;20.0
+376;3533304;Nova Luzitânia;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;3774;R$ 185.266.683;25.0
+377;3533403;Nova Odessa;Região Administrativa de Campinas;Região Metropolitana de Campinas;4083;R$ 54.495.206;7.0
+378;3533502;Novo Horizonte;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;58490;R$ 3.647.305.668;239.0
+379;3533601;Nuporanga;Região Administrativa de Franca;Região Metropolitana de Ribeirão Preto;5575;R$ 75.078.141;139.0
+380;3533700;Ocauçu;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;39124;R$ 1.394.318.563;34.0
+381;3533809;Óleo;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;7297;R$ 723.330.888;18.0
+382;3533908;Olímpia;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;4143;R$ 178.951.677;5.0
+383;3534005;Onda Verde;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;2517;R$ 128.692.078;242.0
+384;3534104;Oriente;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;52670;R$ 2.125.601.452;26.0
+385;3534203;Orindiúva;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;4250;R$ 189.749.482;27.0
+386;3534302;Orlândia;Região Administrativa de Franca;Região Metropolitana de Ribeirão Preto;6275;R$ 112.839.771;26.0
+387;3534401;Osasco;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;6951;R$ 515.615.981;165.0
+388;3534500;Oscar Bressane;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;42436;R$ 2.180.278.327;2.919
+389;3534609;Osvaldo Cruz;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;682876;R$ 76.311.813.717;8.0
+390;3534708;Ourinhos;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;2508;R$ 104.645.651;122.0
+391;3534757;Ouroeste;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;31256;R$ 992.800.229;395.0
+392;3534807;Ouro Verde;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;111039;R$ 3.504.208.519;25.0
+393;3534906;Pacaembu;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;8306;R$ 127.357.073;37.0
+394;3535002;Palestina;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;9871;R$ 596.080.992;41.0
+395;3535101;Palmares Paulista;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;13041;R$ 206.125.943;41.0
+396;3535200;Palmeira d'Oeste;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;12220;R$ 429.397.168;30.0
+397;3535309;Palmital;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;13154;R$ 131.300.083;31.0
+398;3535408;Panorama;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;9092;R$ 206.238.853;66.0
+399;3535507;Paraguaçu Paulista;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;21609;R$ 825.926.300;64.0
+400;3535606;Paraibuna;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;15253;R$ 298.574.906;164.0
+401;3535705;Paraíso;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;44310;R$ 1.646.041.051;68.0
+402;3535804;Paranapanema;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;18304;R$ 325.456.394;14.0
+403;3535903;Paranapuã;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;6293;R$ 266.519.561;29.0
+404;3536000;Parapuã;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;20151;R$ 894.411.936;22.0
+405;3536109;Pardinho;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;3895;R$ 146.562.331;38.0
+406;3536208;Pariquera-Açu;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;10473;R$ 640.349.695;38.0
+407;3536257;Parisi;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;6467;R$ 322.481.674;83.0
+408;3536307;Patrocínio Paulista;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;19311;R$ 533.919.078;6.0
+409;3536406;Paulicéia;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;2053;R$ 53.316.041;68.0
+410;3536505;Paulínia;Região Administrativa de Campinas;Região Metropolitana de Campinas;14592;R$ 1.150.895.781;38.0
+411;3536570;Paulistânia;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;7213;R$ 197.069.605;452.0
+412;3536604;Paulo de Faria;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;106781;R$ 38.572.765.947;9.0
+413;3536703;Pederneiras;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;1769;R$ 43.156.219;26.0
+414;3536802;Pedra Bela;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;8520;R$ 307.339.788;187.0
+415;3536901;Pedranópolis;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;45877;R$ 2.334.030.132;20.0
+416;3537008;Pedregulho;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;5974;R$ 107.472.163;9.0
+417;3537107;Pedreira;Região Administrativa de Campinas;Região Metropolitana de Campinas;2412;R$ 72.994.664;77.0
+418;3537156;Pedrinhas Paulista;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;16319;R$ 1.340.986.644;178.0
+419;3537206;Pedro de Toledo;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;46908;R$ 1.378.762.535;5.0
+420;3537305;Penápolis;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;3015;R$ 159.924.515;37.0
+421;3537404;Pereira Barreto;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;11055;R$ 166.358.796;188.0
+422;3537503;Pereiras;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;60902;R$ 1.708.156.517;49.0
+423;3537602;Peruíbe;Região Administrativa de Santos;Região Metropolitana da Baixada Santista;25411;R$ 910.639.479;32.0
+424;3537701;Piacatu;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;8507;R$ 285.527.706;269.0
+425;3537800;Piedade;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;66747;R$ 1.638.669.330;13.0
+426;3537909;Pilar do Sul;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;5936;R$ 105.499.949;211.0
+427;3538006;Pindamonhangaba;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;53656;R$ 1.520.382.097;154.0
+428;3538105;Pindorama;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;28355;R$ 858.345.512;735.0
+429;3538204;Pinhalzinho;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;164753;R$ 9.034.083.568;44.0
+430;3538303;Piquerobi;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;16331;R$ 422.181.181;50.0
+431;3538501;Piquete;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;14877;R$ 283.314.896;7.0
+432;3538600;Piracaia;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;3532;R$ 61.717.252;45.0
+433;3538709;Piracicaba;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;13621;R$ 200.245.263;97.0
+434;3538808;Piraju;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;26379;R$ 589.541.842;1.59
+435;3538907;Pirajuí;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;391464;R$ 27.172.816.849;124.0
+436;3539004;Pirangi;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;28552;R$ 846.459.710;61.0
+437;3539103;Pirapora do Bom Jesus;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;23274;R$ 493.233.038;29.0
+438;3539202;Pirapozinho;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;10825;R$ 385.531.875;76.0
+439;3539301;Pirassununga;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;19139;R$ 523.355.752;96.0
+440;3539400;Piratininga;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;27425;R$ 967.368.721;260.0
+441;3539509;Pitangueiras;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;73921;R$ 3.119.279.837;49.0
+442;3539608;Planalto;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;13305;R$ 255.490.956;157.0
+443;3539707;Platina;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;38852;R$ 1.278.782.091;19.0
+444;3539806;Poá;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;5221;R$ 180.544.434;13.0
+445;3539905;Poloni;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;3528;R$ 127.549.339;425.0
+446;3540002;Pompéia;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;116289;R$ 3.312.399.565;22.0
+447;3540101;Pongaí;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;5681;R$ 143.746.904;62.0
+448;3540200;Pontal;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;21384;R$ 1.506.758.551;11.0
+449;3540259;Pontalinda;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;3340;R$ 84.841.493;185.0
+450;3540309;Pontes Gestal;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;49889;R$ 1.303.918.803;11.0
+451;3540408;Populina;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;4515;R$ 85.609.517;11.0
+452;3540507;Porangaba;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;2530;R$ 102.180.411;11.0
+453;3540606;Porto Feliz;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;3977;R$ 109.557.256;37.0
+454;3540705;Porto Ferreira;Região Administrativa Central;Outros municípios do Estado de São Paulo;9380;R$ 201.390.147;205.0
+455;3540754;Potim;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;51907;R$ 3.136.745.276;195.0
+456;3540804;Potirendaba;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;54274;R$ 2.284.886.764;97.0
+457;3540853;Pracinha;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;20815;R$ 261.237.572;69.0
+458;3540903;Pradópolis;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;16677;R$ 588.461.267;5.0
+459;3541000;Praia Grande;Região Administrativa de Santos;Região Metropolitana da Baixada Santista;2921;R$ 35.875.376;63.0
+460;3541059;Pratânia;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;21167;R$ 1.068.675.331;1.496
+461;3541109;Presidente Alves;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;321008;R$ 8.113.234.425;6.0
+462;3541208;Presidente Bernardes;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;5210;R$ 115.913.030;21.0
+463;3541307;Presidente Epitácio;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;4011;R$ 72.702.000;32.0
+464;3541406;Presidente Prudente;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;13713;R$ 364.663.878;140.0
+465;3541505;Presidente Venceslau;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;42484;R$ 955.683.297;828.0
+466;3541604;Promissão;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;221938;R$ 8.506.731.995;129.0
+467;3541653;Quadra;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;37981;R$ 783.764.658;135.0
+468;3541703;Quatá;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;40001;R$ 2.047.758.600;10.0
+469;3541802;Queiroz;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;3745;R$ 125.521.750;47.0
+470;3541901;Queluz;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;14025;R$ 744.439.879;20.0
+471;3542008;Quintana;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;3319;R$ 869.318.937;48.0
+472;3542107;Rafard;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;12735;R$ 345.672.630;32.0
+473;3542206;Rancharia;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;6539;R$ 219.420.588;38.0
+474;3542305;Redenção da Serra;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;9014;R$ 383.625.498;122.0
+475;3542404;Regente Feijó;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;28855;R$ 1.322.460.992;14.0
+476;3542503;Reginópolis;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;3834;R$ 62.422.183;77.0
+477;3542602;Registro;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;19556;R$ 850.298.184;19.0
+478;3542701;Restinga;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;7204;R$ 176.929.082;269.0
+479;3542800;Ribeira;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;54270;R$ 2.187.147.943;29.0
+480;3542909;Ribeirão Bonito;Região Administrativa Central;Outros municípios do Estado de São Paulo;7575;R$ 192.918.139;15.0
+481;3543006;Ribeirão Branco;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;3240;R$ 54.175.041;46.0
+482;3543105;Ribeirão Corrente;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;13033;R$ 345.639.139;92.0
+483;3543204;Ribeirão do Sul;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;17683;R$ 512.144.776;19.0
+484;3543238;Ribeirão dos Índios;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;4698;R$ 175.237.915;23.0
+485;3543253;Ribeirão Grande;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;4351;R$ 201.040.206;8.0
+486;3543303;Ribeirão Pires;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;2135;R$ 42.307.996;26.0
+487;3543402;Ribeirão Preto;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;7515;R$ 218.852.411;356.0
+488;3543501;Riversul;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;119339;R$ 3.341.359.834;2.593
+489;3543600;Rifaina;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;688894;R$ 35.218.869.200;20.0
+490;3543709;Rincão;Região Administrativa Central;Outros municípios do Estado de São Paulo;3470;R$ 173.656.442;17.0
+491;3543808;Rinópolis;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;10506;R$ 209.965.061;40.0
+492;3543907;Rio Claro;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;9700;R$ 303.133.820;30.0
+493;3544004;Rio das Pedras;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;202289;R$ 11.432.196.416;752.0
+494;3544103;Rio Grande da Serra;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;34768;R$ 1.464.967.660;133.0
+495;3544202;Riolândia;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;50313;R$ 847.583.471;178.0
+496;3544251;Rosana;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;11501;R$ 246.045.995;49.0
+497;3544301;Roseira;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;5686;R$ 85.167.068;74.0
+498;3544400;Rubiácea;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;18320;R$ 2.277.164.663;34.0
+499;3544509;Rubinéia;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;10723;R$ 338.538.534;6.0
+500;3544608;Sabino;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;3138;R$ 81.573.052;6.0
+501;3544707;Sagres;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;2996;R$ 88.399.102;21.0
+502;3544806;Sales;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;5485;R$ 135.305.954;10.0
+503;3544905;Sales Oliveira;Região Administrativa de Franca;Região Metropolitana de Ribeirão Preto;2362;R$ 46.477.686;14.0
+504;3545001;Salesópolis;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;6082;R$ 155.723.229;31.0
+505;3545100;Salmourão;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;11580;R$ 412.198.787;90.0
+506;3545159;Saltinho;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;16945;R$ 244.310.948;17.0
+507;3545209;Salto;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;5138;R$ 83.198.002;26.0
+508;3545308;Salto de Pirapora;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;7898;R$ 292.354.044;557.0
+509;3545407;Salto Grande;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;116089;R$ 7.805.417.815;155.0
+510;3545506;Sandovalina;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;44522;R$ 2.105.313.446;40.0
+511;3545605;Santa Adélia;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;9125;R$ 268.221.844;15.0
+512;3545704;Santa Albertina;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;4257;R$ 436.747.722;55.0
+513;3545803;Santa Bárbara d'Oeste;Região Administrativa de Campinas;Região Metropolitana de Campinas;14929;R$ 356.440.206;23.0
+514;3546009;Santa Branca;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;5657;R$ 212.827.769;713.0
+515;3546108;Santa Clara d'Oeste;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;189330;R$ 6.480.086.851;36.0
+516;3546207;Santa Cruz da Conceição;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;14212;R$ 284.605.121;9.0
+517;3546256;Santa Cruz da Esperança;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;1998;R$ 73.993.095;8.0
+518;3546306;Santa Cruz das Palmeiras;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;4372;R$ 144.059.971;7.0
+519;3546405;Santa Cruz do Rio Pardo;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;2086;R$ 63.847.181;138.0
+520;3546504;Santa Ernestina;Região Administrativa Central;Outros municípios do Estado de São Paulo;34031;R$ 580.135.268;212.0
+521;3546603;Santa Fé do Sul;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;46276;R$ 2.429.446.434;19.0
+522;3546702;Santa Gertrudes;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;5527;R$ 106.245.490;70.0
+523;3546801;Santa Isabel;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;30897;R$ 1.268.450.629;106.0
+524;3546900;Santa Lúcia;Região Administrativa Central;Outros municípios do Estado de São Paulo;26572;R$ 2.691.618.487;206.0
+525;3547007;Santa Maria da Serra;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;55436;R$ 1.608.902.358;18.0
+526;3547106;Santa Mercedes;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;8590;R$ 125.726.666;35.0
+527;3547205;Santana da Ponte Pensa;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;6208;R$ 137.313.184;15.0
+528;3547304;Santana de Parnaíba;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;2814;R$ 61.991.551;9.0
+529;3547403;Santa Rita d'Oeste;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;2389;R$ 759.046.026;731.0
+530;3547502;Santa Rita do Passa Quatro;Região Administrativa Central;Região Metropolitana de Ribeirão Preto;26355;R$ 66.988.325;7.0
+531;3547601;Santa Rosa de Viterbo;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;25732;R$ 762.226.332;79.0
+532;3547650;Santa Salete;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;1438;R$ 39.552.431;90.0
+533;3547700;Santo Anastácio;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;1497;R$ 41.425.328;6.0
+534;3547809;Santo André;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;140616;R$ 9.901.438.744;69.0
+535;3547908;Santo Antônio da Alegria;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;20106;R$ 500.827.380;2.63
+536;3548005;Santo Antônio de Posse;Região Administrativa de Campinas;Região Metropolitana de Campinas;694681;R$ 29.440.476.662;21.0
+537;3548054;Santo Antônio do Aracanguá;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;6661;R$ 186.669.696;105.0
+538;3548104;Santo Antônio do Jardim;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;23027;R$ 1.591.867.328;27.0
+539;3548203;Santo Antônio do Pinhal;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;8297;R$ 253.425.335;22.0
+540;3548302;Santo Expedito;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;5823;R$ 195.824.485;36.0
+541;3548401;Santópolis do Aguapeí;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;6643;R$ 129.814.737;12.0
+542;3548500;Santos;Região Administrativa de Santos;Região Metropolitana da Baixada Santista;2986;R$ 44.972.314;19.0
+543;3548609;São Bento do Sapucaí;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;4698;R$ 72.147.073;1.101
+544;3548708;São Bernardo do Campo;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;429513;R$ 22.073.535.214;47.0
+545;3548807;São Caetano do Sul;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;10539;R$ 238.796.029;2.89
+546;3548906;São Carlos;Região Administrativa Central;Outros municípios do Estado de São Paulo;815109;R$ 48.614.342.054;476.0
+547;3549003;São Francisco;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;151111;R$ 13.960.695.306;1.032
+548;3549102;São João da Boa Vista;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;244036;R$ 12.139.151.803;8.0
+549;3549201;São João das Duas Pontes;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;2667;R$ 47.776.911;5.0
+550;3549250;São João de Iracema;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;87537;R$ 3.443.740.915;6.0
+551;3549300;São João do Pau d'Alho;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;2466;R$ 49.294.788;7.0
+552;3549409;São Joaquim da Barra;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;1853;R$ 42.533.643;9.0
+553;3549508;São José da Bela Vista;Região Administrativa de Franca;Outros municípios do Estado de São Paulo;1973;R$ 55.343.071;163.0
+554;3549607;São José do Barreiro;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;50553;R$ 1.884.291.129;12.0
+555;3549706;São José do Rio Pardo;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;8762;R$ 183.808.980;18.0
+556;3549805;São José do Rio Preto;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;4073;R$ 60.253.091;174.0
+557;3549904;São José dos Campos;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;53277;R$ 2.167.056.223;1.791
+558;3549953;São Lourenço da Serra;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;450361;R$ 18.694.213.290;2.721
+559;3550001;São Luís do Paraitinga;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;716688;R$ 39.148.011.819;57.0
+560;3550100;São Manuel;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;15721;R$ 265.601.211;33.0
+561;3550209;São Miguel Arcanjo;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;10584;R$ 190.188.478;163.0
+562;3550308;São Paulo;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;39678;R$ 1.286.638.976;135.0
+563;3550407;São Pedro;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;32115;R$ 929.242.028;45.335
+564;3550506;São Pedro do Turvo;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;11914851;R$ 748.759.006.965;150.0
+565;3550605;São Roque;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;34408;R$ 817.487.375;30.0
+566;3550704;São Sebastião;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;7389;R$ 235.065.678;300.0
+567;3550803;São Sebastião da Grama;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;88032;R$ 3.108.224.143;419.0
+568;3550902;São Simão;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;88156;R$ 3.417.181.475;36.0
+569;3551009;São Vicente;Região Administrativa de Santos;Região Metropolitana da Baixada Santista;11929;R$ 330.005.750;50.0
+570;3551108;Sarapuí;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;14891;R$ 472.877.535;1.326
+571;3551207;Sarutaiá;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;360262;R$ 5.728.474.237;39.0
+572;3551306;Sebastianópolis do Sul;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;10206;R$ 187.018.831;11.0
+573;3551405;Serra Azul;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;3652;R$ 85.716.741;9.0
+574;3551504;Serrana;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;3304;R$ 436.200.962;46.0
+575;3551603;Serra Negra;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;12381;R$ 188.938.182;182.0
+576;3551702;Sertãozinho;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;27486;R$ 741.178.563;102.0
+577;3551801;Sete Barras;Região Administrativa de Registro;Outros municípios do Estado de São Paulo;44870;R$ 1.183.584.261;485.0
+578;3551900;Severínia;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;123148;R$ 6.643.888.832;82.0
+579;3552007;Silveiras;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;12643;R$ 351.527.187;60.0
+580;3552106;Socorro;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;17263;R$ 253.025.838;28.0
+581;3552205;Sorocaba;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;6240;R$ 89.587.124;134.0
+582;3552304;Sud Mennucci;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;38896;R$ 961.730.737;2.833
+583;3552403;Sumaré;Região Administrativa de Campinas;Região Metropolitana de Campinas;663739;R$ 36.723.769.352;39.0
+584;3552502;Suzano;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;7728;R$ 226.141.200;1.145
+585;3552551;Suzanápolis;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;286462;R$ 13.751.004.434;1.42
+586;3552601;Tabapuã;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;3990;R$ 296.819.946;14.0
+587;3552700;Tabatinga;Região Administrativa Central;Outros municípios do Estado de São Paulo;293464;R$ 12.674.723.103;34.0
+588;3552809;Taboão da Serra;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;11918;R$ 260.517.005;66.0
+589;3552908;Taciba;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;15996;R$ 296.296.754;1.215
+590;3553005;Taguaí;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;287155;R$ 9.012.883.310;33.0
+591;3553104;Taiaçu;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;6081;R$ 190.867.215;64.0
+592;3553203;Taiúva;Região Administrativa de Barretos;Região Metropolitana de Ribeirão Preto;13503;R$ 275.497.744;24.0
+593;3553302;Tambaú;Região Administrativa de Campinas;Região Metropolitana de Ribeirão Preto;6048;R$ 100.281.215;11.0
+594;3553401;Tanabi;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;6265;R$ 116.192.232;99.0
+595;3553500;Tapiraí;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;22846;R$ 599.379.890;76.0
+596;3553609;Tapiratiba;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;25147;R$ 1.215.751.642;50.0
+597;3553658;Taquaral;Região Administrativa de Ribeirão Preto;Região Metropolitana de Ribeirão Preto;7705;R$ 183.352.139;39.0
+598;3553708;Taquaritinga;Região Administrativa Central;Outros municípios do Estado de São Paulo;12602;R$ 259.600.115;8.0
+599;3553807;Taquarituba;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;2753;R$ 44.491.544;196.0
+600;3553856;Taquarivaí;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;54531;R$ 1.725.183.507;64.0
+601;3553906;Tarabai;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;23246;R$ 880.381.501;37.0
+602;3553955;Tarumã;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;5803;R$ 334.988.909;20.0
+603;3554003;Tatuí;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;7327;R$ 143.040.319;52.0
+604;3554102;Taubaté;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;14951;R$ 853.305.248;515.0
+605;3554201;Tejupá;Região Administrativa de Itapeva;Outros municípios do Estado de São Paulo;121202;R$ 4.402.998.269;1.246
+606;3554300;Teodoro Sampaio;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;309483;R$ 14.906.023.320;19.0
+607;3554409;Terra Roxa;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;4707;R$ 121.606.759;104.0
+608;3554508;Tietê;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;22495;R$ 581.093.736;29.0
+609;3554607;Timburi;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;9170;R$ 160.431.564;141.0
+610;3554656;Torre de Pedra;Região Administrativa de Sorocaba;Outros municípios do Estado de São Paulo;41405;R$ 1.970.726.356;
+611;3554706;Torrinha;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;2551;R$ 58.151.580;13.0
+612;3554755;Trabiju;Região Administrativa Central;Outros municípios do Estado de São Paulo;2325;R$ 33.931.071;28.0
+613;3554805;Tremembé;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;9736;R$ 235.340.938;7.0
+614;3554904;Três Fronteiras;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;1716;R$ 41.626.798;148.0
+615;3554953;Tuiuti;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;46364;R$ 811.760.179;23.0
+616;3555000;Tupã;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;5550;R$ 110.466.180;26.0
+617;3555109;Tupi Paulista;Região Administrativa de Presidente Prudente;Outros municípios do Estado de São Paulo;6597;R$ 186.675.772;108.0
+618;3555208;Turiúba;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;62720;R$ 2.036.552.634;36.0
+619;3555307;Turmalina;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;14877;R$ 313.149.708;4.0
+620;3555356;Ubarana;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;1905;R$ 54.958.160;4.0
+621;3555406;Ubatuba;Região Administrativa de São José dos Campos;Região Metropolitana do Vale do Paraíba e Litoral Norte;1789;R$ 67.484.938;20.0
+622;3555505;Ubirajara;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;6126;R$ 402.170.434;441.0
+623;3555604;Uchoa;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;89782;R$ 2.397.632.313;31.0
+624;3555703;União Paulista;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;4684;R$ 116.223.223;30.0
+625;3555802;Urânia;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;9689;R$ 351.309.281;10.0
+626;3555901;Uru;Região Administrativa de Bauru;Outros municípios do Estado de São Paulo;1751;R$ 50.725.149;23.0
+627;3556008;Urupês;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;8584;R$ 246.761.927;4.0
+628;3556107;Valentim Gentil;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;1203;R$ 44.852.788;46.0
+629;3556206;Valinhos;Região Administrativa de Campinas;Região Metropolitana de Campinas;13181;R$ 462.792.470;59.0
+630;3556305;Valparaíso;Região Administrativa de Araçatuba;Outros municípios do Estado de São Paulo;12897;R$ 397.263.695;384.0
+631;3556354;Vargem;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;125800;R$ 6.864.135.941;63.0
+632;3556404;Vargem Grande do Sul;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;24099;R$ 1.157.112.570;38.0
+633;3556453;Vargem Grande Paulista;Região Metropolitana de São Paulo;Região Metropolitana de São Paulo;10094;R$ 145.029.443;180.0
+634;3556503;Várzea Paulista;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;41684;R$ 1.133.433.287;258.0
+635;3556602;Vera Cruz;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;53613;R$ 2.361.929.523;450.0
+636;3556701;Vinhedo;Região Administrativa de Campinas;Região Metropolitana de Campinas;121482;R$ 3.139.193.582;23.0
+637;3556800;Viradouro;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;10506;R$ 200.804.699;266.0
+638;3556909;Vista Alegre do Alto;Região Administrativa de Barretos;Outros municípios do Estado de São Paulo;78440;R$ 10.454.486.763;76.0
+639;3556958;Vitória Brasil;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;18421;R$ 371.940.300;38.0
+640;3557006;Votorantim;Região Administrativa de Sorocaba;Região Metropolitana de Sorocaba;8091;R$ 404.202.318;5.0
+641;3557105;Votuporanga;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;1761;R$ 42.541.640;513.0
+642;3557154;Zacarias;Região Administrativa de São José do Rio Preto;Outros municípios do Estado de São Paulo;120662;R$ 3.425.369.517;404.0
+643;3557204;Chavantes;Região Administrativa de Marília;Outros municípios do Estado de São Paulo;92193;R$ 3.374.036.555;9.0
+644;3557303;Estiva Gerbi;Região Administrativa de Campinas;Outros municípios do Estado de São Paulo;2574;R$ 113.037.299;54.0
