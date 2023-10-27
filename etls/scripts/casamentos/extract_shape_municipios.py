@@ -1,5 +1,5 @@
 
-from .file_cache import FileCache
+from etls.utils.file_cache import FileCache
 from io import BytesIO
 from zipfile import ZipFile
 import geopandas as gpd

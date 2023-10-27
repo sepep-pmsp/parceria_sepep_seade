@@ -1,4 +1,4 @@
-from .extract_casamentos import Extractor
+from .extract import Extractor
 from .load_shape_municipios import Load
 import pandas as pd
 from typing import Tuple

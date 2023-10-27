@@ -1,4 +1,4 @@
-from .transform_casamentos import Transformer
+from .transform import Transformer
 import os
 import pandas as pd
 from config import DATA_FOLDER
