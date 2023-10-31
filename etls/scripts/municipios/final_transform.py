@@ -5,7 +5,7 @@ from .transform_pop import Transform as Transform_pop
 import pandas as pd
 import copy
 
-class Transform:
+class Transformer:
 
 
     dataframes = {
