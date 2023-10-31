@@ -1,6 +1,6 @@
 from .transform import Transformer
 import pandas as pd
-from utils.path import check_file_exists, solve_path
+from etls.utils.path import check_file_exists, solve_path
 from config import DATA_FOLDER
 
 class Load:
@@ -12,7 +12,7 @@ class Load:
         self.transform = Transformer(verbose)
 
         self.df_gen = self.transform()
-        self.file_name_path = solve_path(DATA_FOLDER, self.file_name)
+        self.file_name_path = solve_path(self.file_name, DATA_FOLDER)
 
     def pipeline(self):
 

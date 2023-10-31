@@ -37,6 +37,7 @@ class Transformer:
         pivot = dataframes.pop()
 
         for df in dataframes: 
+            #o merge vai ter que ser no cod_municipio + ano
             df['cod_municipio'] = df['cod_municipio'].astype(int)
             pivot = pd.merge(pivot, df, how='left', on='cod_municipio')
 
