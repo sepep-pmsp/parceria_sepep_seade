@@ -11,7 +11,7 @@ country_code_package = ckan('microdados-casamentos', search_string='códigos de 
 
 population_package_filter = (population_package['ano'] == 2021)
 pib_package_filter = (pib_package['Setor'] == 'PIB')
-born_alive_package_filter = (born_alive_package[' '] == 2021)
+born_alive_package_filter = (born_alive_package['Ano'] == 2021)
 country_code_package_filter = ((country_code_package['ra_desc'] != 'SP - Município ignorado') & (country_code_package['uf'] == 35))
 
 population_package = population_package[population_package_filter].filter(['cod_ibge', 'populacao'], axis=1)
