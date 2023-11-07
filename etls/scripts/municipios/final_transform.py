@@ -4,6 +4,8 @@ from .transform_pib import Transform as Transform_pib
 from .transform_pop import Transform as Transform_pop
 import pandas as pd
 import copy
+import itertools as itertools
+
 
 class Transformer:
 
@@ -33,13 +35,37 @@ class Transformer:
 
     def merge_dataframes(self)->pd.DataFrame:
 
-        dataframes = [df for df in self.dataframes.values()]
-        pivot = dataframes.pop()
+        dataframes_instances = [df for df in self.dataframes.values()]
+        #O primeiro dataframe sempre será o de municipios,
+        # que precisa ser o primeiro ao iniciar a funcao
+        pivot = dataframes_instances.pop(0)
+        print(dataframes_instances)
 
-        for df in dataframes: 
+        set_ano = set()
+        for df in dataframes_instances:
+            temp_set = set(df['Ano'].unique())
+            set_ano = set_ano.union(temp_set)
+
+
+
+        set_mun = set(pivot['cod_municipio'])
+
+
+        new_df_data = [(ano, cod_mun) for ano, cod_mun in itertools.product(set_ano, set_mun)]
+        new_df_columns = ['Ano', 'cod_municipio']
+
+        new_df = pd.DataFrame(data= new_df_data, columns= new_df_columns)
+
+        pivot = pd.merge(pivot, new_df, how='left', on=['cod_municipio'])
+
+
+
+        for df in dataframes_instances: 
             #o merge vai ter que ser no cod_municipio + ano
             df['cod_municipio'] = df['cod_municipio'].astype(int)
-            pivot = pd.merge(pivot, df, how='left', on='cod_municipio')
+            pivot = pd.merge(pivot, df, how='left', on=['cod_municipio', 'Ano'])
+
+                    
 
         return pivot
     
@@ -59,7 +85,6 @@ class Transformer:
         return df
     
     def __call__(self)->pd.DataFrame:
-
         return self.pipeline()
 
 

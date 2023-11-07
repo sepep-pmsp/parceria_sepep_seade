@@ -6,9 +6,11 @@ class Transform(Base):
     def pipeline(self)->DataFrame:
 
         df = self.extract.populacao
-        df = self.filter_rows(df, 'ano', 2021)
-        df = self.filter_columns(df, ['cod_ibge', 'populacao'])
-        df = self.rename_columns(df, 'cod_ibge', populacao='habitantes')
+        df = self.filter_columns(df, ['cod_ibge', 'populacao', 'ano'])
+        df = self.rename_columns(df, 'cod_ibge', populacao='habitantes_do_mun', ano='Ano')
+
+        df = df.sort_values(['cod_municipio','Ano'])
+
 
         return df
     

@@ -13,14 +13,19 @@ class Extractor:
             'nom_pkg' : 'pib-municipal-2002-2020',
             'search_str' : 'PIB Municipal 2002 a 2020'
             },
-        'estats_vitais' : {
+        'estats_vitais_2021' : {
             'nom_pkg' : 'estatisticas-vitais',
             'search_str' : 'Nascidos Vivos por sexo - 2021',
+        },
+        'estats_vitais_2000_a_2020' : {
+            'nom_pkg' : 'estatisticas-vitais',
+            'search_str' : 'Nascidos Vivos 2000-2020',
         },
         'codigos_mun' : {
             'nom_pkg' : 'microdados-casamentos',
             'search_str' : 'Tabela de município/UF/País'
         }
+        
         
     }
 
@@ -51,9 +56,14 @@ class Extractor:
         return self.get_specified_package_with_resources(**self.pacotes_busca['pib'])
 
     @property
-    def estats_vitais(self):
+    def estats_vitais_2021(self):
 
-        return self.get_specified_package_with_resources(**self.pacotes_busca['estats_vitais'])
+        return self.get_specified_package_with_resources(**self.pacotes_busca['estats_vitais_2021'])
+    
+    @property
+    def estats_vitais_2000_a_2020(self):
+
+        return self.get_specified_package_with_resources(**self.pacotes_busca['estats_vitais_2000_a_2020'])
     
     @property
     def codigos_mun(self):
