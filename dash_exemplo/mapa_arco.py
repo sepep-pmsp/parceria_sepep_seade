@@ -1,9 +1,22 @@
 import pydeck as pdk
+import os
+from dotenv import load_dotenv
 
 GREEN_RGB = [0, 255, 0, 40]
 RED_RGB = [240, 100, 0, 40]
+URL_LAYER_CARTO = 'https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png'
+
+
+mapbox_api_token = os.getenv("MAPBOX_ACCESS_TOKEN")
+
+
+
+
 
 def gerar_pydeck(df):
+
+    tile_layer = pdk.Layer('TileLayer', data= URL_LAYER_CARTO)
+
 
     arc_layer = pdk.Layer(
     "ArcLayer",
@@ -37,6 +50,6 @@ def gerar_pydeck(df):
 
 
     TOOLTIP_TEXT = {"html": "{nome_municipio_destino} : {total_casamentos}"}
-    r = pdk.Deck(arc_layer, initial_view_state=view_state, tooltip=TOOLTIP_TEXT)
+    r = pdk.Deck(arc_layer, initial_view_state=view_state, tooltip=TOOLTIP_TEXT,  mapbox_key=mapbox_api_token)
 
     return r
