@@ -8,7 +8,7 @@ import pandas as pd
 from etls.scripts.casamentos import etl as casamamentos
 from etls.scripts.casamentos import TransformTotalMun
 from etls.scripts.municipios import etl as municipios
-from dash_exemplo.mapa_arco import gerar_pydeck
+from gen_mapa.mapa_arco import gerar_pydeck
 from config import MAPBOX_ACCESS_TOKEN
 
 

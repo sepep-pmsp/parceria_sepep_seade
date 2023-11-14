@@ -12,7 +12,7 @@ def gerar_pydeck(df):
     arc_layer = pdk.Layer(
     "ArcLayer",
     data=df,
-    get_width="total_casamentos * 0.1",
+    get_width="total_casamentos * 0.01",
     get_source_position=["lon_origem", "lat_origem"],
     get_target_position=["lon_destino", "lat_destino"],
     get_tilt=15,

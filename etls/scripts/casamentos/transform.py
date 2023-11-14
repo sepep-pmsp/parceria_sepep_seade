@@ -7,8 +7,8 @@ class Transformer:
 
     colunas_mapper = {
         'anoreferencia' : 'ano_casamento',
-        'codrescj1' : 'cod_residencia_cj1',
-        'codrescj2' : 'cod_residencia_cj2',
+        'naturalcj1' : 'cod_residencia_cj1',
+        'naturalcj2' : 'cod_residencia_cj2',
     }
 
     codigo_ibge_estado_sp = 35
