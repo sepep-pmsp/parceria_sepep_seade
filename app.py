@@ -1,6 +1,6 @@
 import dash
 import dash_deck
-from dash import dcc, html
+from dash import dcc, html, dash_table
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 import plotly.express as px
@@ -8,6 +8,8 @@ import plotly.express as px
 import pydeck as pdk
 import pandas as pd
 import json
+import random
+
 
 from etls.scripts.casamentos import etl as casamamentos
 from etls.scripts.casamentos import TransformTotalMun
@@ -34,6 +36,7 @@ def get_opcoes_municipios(df_municipios):
     return opcoes_municipios
 
 opcoes_municipios = get_opcoes_municipios(df_municipios)
+municipio_aleatorio = random.choice(opcoes_municipios)['value']
 
 r = gerar_pydeck(total_casamentos)
 
@@ -57,7 +60,7 @@ controls = dbc.Card(
                 dcc.Dropdown(
                     id="seletor_mun",
                     options=opcoes_municipios,
-                    value=3500105,
+                    value=municipio_aleatorio
                 ),
             ]
         ),
@@ -69,6 +72,8 @@ controls = dbc.Card(
 div_graficos = dbc.Card(
     [
         dcc.Graph(id="grafico_linha_hab"),
+        dcc.Graph(id="grafico_linha_nascidos_vivos"),
+        dcc.Graph(id="grafico_linha_pib"),
     ],
     body=True,
 )
@@ -79,29 +84,59 @@ app.layout = html.Div(
         mapa_div,
         controls,
         div_graficos
-    
+
     ]
 )
 
 
-@app.callback(Output('seletor_mun', "value"), Input("deck-gl", 'clickInfo'))
-def get_mun_name(data):
+@app.callback(Output('seletor_mun', "value"), [Input("deck-gl", 'clickInfo'), Input('seletor_mun', 'value')])
+def get_mun_name(data, selecao_atual):
     
     if data:
         #puxa o municipio, caso tenha clicado fora já define como miss
-        objeto = data.get('object') or {'destino' : 'MISS'}
+        objeto = data.get('object') or {'destino' : selecao_atual}
         
-        return objeto.get('destino', 'MISS')
-    return 'MISS'
+        selecao = objeto.get('destino', selecao_atual)
+        return selecao
+    return selecao_atual
+
+
+@app.callback(Output('deck-gl', 'clickInfo'), Input('seletor_mun', 'value'))
+def zerar_dados_mapa(valor):
+
+    return None
+
     
 @app.callback(
     Output("grafico_linha_hab", "figure"), 
     Input("seletor_mun", "value"))
-def update_line_chart(cod_mun):
+def update_line_chart_habitantes(cod_mun):
 
     mask = df_municipios['cod_municipio']==cod_mun
     fig = px.line(df_municipios[mask], 
         x="Ano", y="habitantes_do_mun")
+    return fig
+
+
+@app.callback(
+    Output("grafico_linha_nascidos_vivos", "figure"), 
+    Input("seletor_mun", "value"))
+def update_line_chart_nascidos_vivos(cod_mun):
+
+    mask = df_municipios['cod_municipio']==cod_mun
+    fig = px.line(df_municipios[mask], 
+        x="Ano", y="Nascidos vivos")
+    return fig
+
+
+@app.callback(
+    Output("grafico_linha_pib", "figure"), 
+    Input("seletor_mun", "value"))
+def update_line_chart_pib(cod_mun):
+
+    mask = df_municipios['cod_municipio']==cod_mun
+    fig = px.line(df_municipios[mask], 
+        x="Ano", y="valor_do_PIB")
     return fig
 
 
