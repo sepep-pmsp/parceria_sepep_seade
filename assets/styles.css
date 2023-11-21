@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+    --background-color: #1e1e1e;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+.body{
+    background-color: var(--background-color);
+}
+
+.banner_div{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+
+}
+
+.imagem_logo{
+    height: 10rem;
+    width: 20rem;
+}
+
+.texto_logo{
+    color: #FFF;
+    font-family: Roboto Serif;
+    font-size: 4.1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.hero{
+    display: flex;
+}
+
+.graph{
+    height: 60%;
+    width: 60%;
+}

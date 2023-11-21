@@ -45,24 +45,37 @@ app = dash.Dash(__name__)
 TOOLTIP_TEXT = {"html": "{nome_municipio_destino} : {total_casamentos}"}
 
 
+
+
+texto_div = html.H1('Casamentos em São Paulo',
+                    className='texto_logo')
+imagem_div = html.Img(src= 'https://s3-alpha-sig.figma.com/img/ecf2/8900/78198fce56ddd3802d09b086361098d1?Expires=1701648000&Signature=oggmIKbATFXl1mUJQSigtAhv0F8FrP0CK7imaSRovB1v7pQPakoy-cMT7xwKezd0VO23DCNtNKMiwCWXhbygUonhmLuOGp6RtkBzweUazt7Lcw346aKRSesZX6r7NcK9KEzD8FK92vpXH-MA3u-IZBvA7oztkGd9krsypbdm5DlZyHWTFQxnD7NwoKe4g-Sc~CAuj1aRW-Udg79cdhT1~x5VmmPWS6cVMRlwGFXqY-SHhiqmXri3xZTnkfcJkT6C~jlSXP~zwgMJwACouHZYUQGqprWbW~qM5wNaxAwihFAGn29X~~Bgyo71-EbGpKJ5dPmMWdzaLkVQuqDijbV23Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+                      className='imagem_logo')
+
+banner_div = html.Div([texto_div, imagem_div],
+                      className='banner_div')
+
+
 mapa_div = html.Div(
             dash_deck.DeckGL(
                 r.to_json(), id="deck-gl", mapboxKey=MAPBOX_ACCESS_TOKEN, tooltip=TOOLTIP_TEXT, enableEvents=['click']
             ),
-            style={"height": "400px", "width": "100%", "position": "relative"},
+            style={"height": "400px", 'width': '40%', "position": "relative"},
         )
+
+
 
 controls = dbc.Card(
     [
         html.Div(
             [
-                dbc.Label("Nome do Município"),
                 dcc.Dropdown(
                     id="seletor_mun",
                     options=opcoes_municipios,
                     value=municipio_aleatorio
                 ),
-            ]
+
+            ],            
         ),
     ],
     body=True,
@@ -78,14 +91,20 @@ div_graficos = dbc.Card(
     body=True,
 )
 
+div_graficos_selecionados = html.Div([controls, div_graficos],
+                                     className='graph')
+
+div_dashboard = html.Div([mapa_div, div_graficos_selecionados],
+                         className='hero')
+
 
 app.layout = html.Div(
     [
-        mapa_div,
-        controls,
-        div_graficos
+        banner_div,
+        div_dashboard,
 
-    ]
+    ], 
+    className= 'body'
 )
 
 
