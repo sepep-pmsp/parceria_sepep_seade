@@ -10,7 +10,6 @@ import pandas as pd
 import json
 import random
 
-
 from etls.scripts.casamentos import etl as casamamentos
 from etls.scripts.casamentos import TransformTotalMun
 from etls.scripts.municipios import etl as municipios
@@ -49,7 +48,7 @@ TOOLTIP_TEXT = {"html": "{nome_municipio_destino} : {total_casamentos}"}
 
 texto_div = html.H1('Casamentos em São Paulo',
                     className='texto_logo')
-imagem_div = html.Img(src= 'https://s3-alpha-sig.figma.com/img/ecf2/8900/78198fce56ddd3802d09b086361098d1?Expires=1701648000&Signature=oggmIKbATFXl1mUJQSigtAhv0F8FrP0CK7imaSRovB1v7pQPakoy-cMT7xwKezd0VO23DCNtNKMiwCWXhbygUonhmLuOGp6RtkBzweUazt7Lcw346aKRSesZX6r7NcK9KEzD8FK92vpXH-MA3u-IZBvA7oztkGd9krsypbdm5DlZyHWTFQxnD7NwoKe4g-Sc~CAuj1aRW-Udg79cdhT1~x5VmmPWS6cVMRlwGFXqY-SHhiqmXri3xZTnkfcJkT6C~jlSXP~zwgMJwACouHZYUQGqprWbW~qM5wNaxAwihFAGn29X~~Bgyo71-EbGpKJ5dPmMWdzaLkVQuqDijbV23Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+imagem_div = html.Img(src= './assets\LOGOTIPO_PREFEITURA_HORIZONTAL_MONOCROMÁTICO_NEGATIVO.png',
                       className='imagem_logo')
 
 banner_div = html.Div([texto_div, imagem_div],
@@ -60,7 +59,7 @@ mapa_div = html.Div(
             dash_deck.DeckGL(
                 r.to_json(), id="deck-gl", mapboxKey=MAPBOX_ACCESS_TOKEN, tooltip=TOOLTIP_TEXT, enableEvents=['click']
             ),
-            style={"height": "400px", 'width': '40%', "position": "relative"},
+            style={"height": "400px", 'width': '100%', "position": "relative"},
         )
 
 
@@ -72,10 +71,10 @@ controls = dbc.Card(
                 dcc.Dropdown(
                     id="seletor_mun",
                     options=opcoes_municipios,
-                    value=municipio_aleatorio
+                    value=municipio_aleatorio,
+                    className='dropdown'
                 ),
-
-            ],            
+            ],                        
         ),
     ],
     body=True,
@@ -84,17 +83,21 @@ controls = dbc.Card(
 
 div_graficos = dbc.Card(
     [
-        dcc.Graph(id="grafico_linha_hab"),
         dcc.Graph(id="grafico_linha_nascidos_vivos"),
         dcc.Graph(id="grafico_linha_pib"),
     ],
-    body=True,
 )
 
-div_graficos_selecionados = html.Div([controls, div_graficos],
+div_grafico_e_selecao = dbc.Card([controls, dcc.Graph(id="grafico_linha_hab")
+])
+
+div_hero = html.Div([mapa_div,div_grafico_e_selecao],
+                    className='map_and_graph')
+
+div_graficos_selecionados = html.Div(div_graficos,
                                      className='graph')
 
-div_dashboard = html.Div([mapa_div, div_graficos_selecionados],
+div_dashboard = html.Div([div_hero, div_graficos_selecionados],
                          className='hero')
 
 
@@ -133,7 +136,12 @@ def update_line_chart_habitantes(cod_mun):
 
     mask = df_municipios['cod_municipio']==cod_mun
     fig = px.line(df_municipios[mask], 
-        x="Ano", y="habitantes_do_mun")
+        x="Ano", y="habitantes_do_mun", title='Habitantes do munícipio')
+    fig.update_layout( template= 'plotly_dark',)
+    fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)')
+    fig.update_traces(line_color='rgba(240, 100, 0, 40)', line_width=5)
+
+
     return fig
 
 
@@ -144,7 +152,13 @@ def update_line_chart_nascidos_vivos(cod_mun):
 
     mask = df_municipios['cod_municipio']==cod_mun
     fig = px.line(df_municipios[mask], 
-        x="Ano", y="Nascidos vivos")
+        x="Ano", y="Nascidos vivos", title= 'Número de nascituros')
+    fig.update_layout( template= 'plotly_dark',)
+    fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)')
+    fig.update_traces(line_color='rgba(240, 100, 0, 40)', line_width=5)
+
+
+
     return fig
 
 
@@ -155,7 +169,11 @@ def update_line_chart_pib(cod_mun):
 
     mask = df_municipios['cod_municipio']==cod_mun
     fig = px.line(df_municipios[mask], 
-        x="Ano", y="valor_do_PIB")
+        x="Ano", y="valor_do_PIB", title= 'Valor do PIB')
+    fig.update_layout( template= 'plotly_dark',)
+    fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)')
+    fig.update_traces(line_color='rgba(240, 100, 0, 40)', line_width=5)
+
     return fig
 
 
