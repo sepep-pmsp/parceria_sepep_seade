@@ -12,8 +12,9 @@ class Banner:
         
 
     def criar_componente_final(self):
-        self.banner_div = html.Div([self.titulo_div, self.logo_div],
+        banner_div = html.Div([self.titulo_div, self.logo_div],
                         className='banner_div')
+        return banner_div
         
     def pipeline(self):
         
@@ -24,3 +25,4 @@ class Banner:
     def __call__(self)-> html.Div:
 
         return self.pipeline()
+
