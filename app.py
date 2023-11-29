@@ -16,10 +16,11 @@ from etls.scripts.municipios import etl as municipios
 from gen_mapa.mapa_arco import gerar_pydeck
 from config import MAPBOX_ACCESS_TOKEN
 
+from components.map import Map
 
-df_casamentos = casamamentos()
-calc_total_mun = TransformTotalMun(df_casamentos)
-total_casamentos = calc_total_mun()
+app = dash.Dash(__name__)
+
+
 df_municipios = municipios()
 
 
@@ -37,11 +38,9 @@ def get_opcoes_municipios(df_municipios):
 opcoes_municipios = get_opcoes_municipios(df_municipios)
 municipio_aleatorio = random.choice(opcoes_municipios)['value']
 
-r = gerar_pydeck(total_casamentos)
 
 
-app = dash.Dash(__name__)
-TOOLTIP_TEXT = {"html": "{nome_municipio_destino} : {total_casamentos}"}
+
 
 
 
@@ -55,13 +54,8 @@ banner_div = html.Div([texto_div, imagem_div],
                       className='banner_div')
 
 
-mapa_div = html.Div(
-            dash_deck.DeckGL(
-                r.to_json(), id="deck-gl", mapboxKey=MAPBOX_ACCESS_TOKEN, tooltip=TOOLTIP_TEXT, enableEvents=['click']
-            ),
-            style={"height": "400px", 'width': '100%', "position": "relative"},
-        )
-
+mapa = Map()
+mapa_div = mapa.pipeline()
 
 
 controls = dbc.Card(
