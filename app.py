@@ -6,11 +6,15 @@ from etls.scripts.municipios import etl as municipios
 
 from components.layout import Layout
 
+external_stylesheets = ['https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap']
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets= external_stylesheets)
 df_municipios = municipios()
 
 layout = Layout()
+
+
+    
 
 def servir_layout():
     return layout.pipeline()
@@ -43,9 +47,9 @@ def update_line_chart_habitantes(cod_mun):
 
     mask = df_municipios['cod_municipio']==cod_mun
     fig = px.line(df_municipios[mask], 
-        x="Ano", y="habitantes_do_mun", title='Habitantes do munícipio')
+        x="Ano", y="Habitantes do Município", title='Habitantes do munícipio')
     fig.update_layout( template= 'plotly_dark',)
-    fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)')
+    fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)', font_family="Roboto Mono")
     fig.update_traces(line_color='rgba(240, 100, 0, 40)', line_width=5)
 
 
@@ -61,7 +65,7 @@ def update_line_chart_nascidos_vivos(cod_mun):
     fig = px.line(df_municipios[mask], 
         x="Ano", y="Nascidos vivos", title= 'Número de nascituros')
     fig.update_layout( template= 'plotly_dark',)
-    fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)')
+    fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)', font_family="Roboto Mono")
     fig.update_traces(line_color='rgba(240, 100, 0, 40)', line_width=5)
 
 
@@ -76,9 +80,9 @@ def update_line_chart_pib(cod_mun):
 
     mask = df_municipios['cod_municipio']==cod_mun
     fig = px.line(df_municipios[mask], 
-        x="Ano", y="valor_do_PIB", title= 'Valor do PIB')
+        x="Ano", y="Valor do PIB", title= 'Valor do PIB')
     fig.update_layout( template= 'plotly_dark',)
-    fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)')
+    fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)', font_family="Roboto Mono")
     fig.update_traces(line_color='rgba(240, 100, 0, 40)', line_width=5)
 
     return fig
