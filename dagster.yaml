@@ -16,13 +16,15 @@ compute_logs:
   module: dagster.core.storage.local_compute_log_manager
   class: LocalComputeLogManager
   config:
-    base_dir: /opt/dagster/logs/
+    base_dir:
+      env: DAGSTER_LOCAL_COMPUTE_LOG_DIR
 
 local_artifact_storage:
   module: dagster.core.storage.root
   class: LocalArtifactStorage
   config:
-    base_dir: "/opt/dagster/local/"
+    base_dir:
+      env: DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR
 
 scheduler:
   module: dagster.core.scheduler
