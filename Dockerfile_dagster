@@ -1,11 +1,8 @@
 FROM python:3.10-slim
 
-RUN pip install \
-    dagster \
-    dagster-postgres \
-    dagster-webserver \
-    pandas \
-    dagster_aws
+COPY requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
 
 ARG DAGSTER_HOME
 

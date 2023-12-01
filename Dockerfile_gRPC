@@ -3,16 +3,15 @@ FROM python:3.10-slim
 # Checkout and install dagster libraries needed to run the gRPC server
 # exposing your repository to dagster-webserver and dagster-daemon, and to load the DagsterInstance
 
-RUN pip install \
-    dagster \
-    dagster-postgres \
-    pandas \
-    pyarrow \
-    dagster_aws
+COPY requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
 
 ARG DAGSTER_HOME
 
 ARG DAGSTER_MODULE_NAME
+
+ARG DATA_FOLDER
 
 # Add repository code
 RUN mkdir -p ${DAGSTER_HOME}
@@ -22,6 +21,13 @@ COPY dagster.yaml workspace.yaml ${DAGSTER_HOME}
 
 # Copy your code and workspace and dagster instance YAML to /opt/dagster/dagster_home/
 COPY ./${DAGSTER_MODULE_NAME}/ ${DAGSTER_HOME}${DAGSTER_MODULE_NAME}
+
+COPY ./etls/ ${DAGSTER_HOME}etls
+COPY ./core/ ${DAGSTER_HOME}core
+
+COPY ./config.py ${DAGSTER_HOME}config.py
+
+RUN mkdir -p ${DATA_FOLDER}
 
 # Run dagster gRPC server on port 4000
 EXPOSE 4000
