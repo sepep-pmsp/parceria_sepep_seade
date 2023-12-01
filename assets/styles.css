@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+    --background-color: #1e1e1e;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: var(--background-color);
+    font-family: 'Roboto Mono', monospace;
+
+}
+
+
+.banner_div{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+
+
+}
+
+.imagem_logo{
+    height: 10rem;
+    width: 30rem;
+}
+
+.texto_logo{
+    color: #FFF;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4.1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+
+}
+
+.graph{
+    width: 55%;
+    background-color: var(--background-color);
+
+}
+
+.grafico_linha_hab{
+    background-color: #1e1e1e;
+}
+
+
+.Select-control {
+    background-color: rgb(25, 25, 25) !important;
+    color:white;
+  }
+  
+.Select-menu-outer {
+    background-color: rgb(25, 25, 25);
+    color: white;
+}
+
+.Select-value-label {
+    color: white !important;
+}
+
+.map_and_graph{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.nasc_graph{
+    margin-top: -36px;
+}
+
+.pib_graph{
+    margin-top: 24px;
+}
+
+@media (max-width: 860px) {
+    .banner_div{
+        flex-direction: column;
+        padding: 1rem;
+
+    }
+
+    .imagem_logo{
+        height: 5rem;
+        width: 15rem;
+    }
+
+    .texto_logo{
+        font-size: 3.1rem;
+    }
+    .graph{
+        width: 100%;
+    }
+
+    .map_and_graph{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero{
+        flex-direction: column;
+        padding: 1rem;
+    }
+  }

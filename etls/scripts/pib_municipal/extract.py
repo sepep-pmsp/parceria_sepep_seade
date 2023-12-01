@@ -1,4 +1,4 @@
-from core.ckan_api_reader import ListResources
+from core.ckan_api_reader import Ckan
 from config import CKAN_DOMAIN
 from typing import Generator
 
@@ -6,7 +6,7 @@ class Extract:
 
     def __init__(self):
 
-        self.ckan = ListResources(CKAN_DOMAIN)
+        self.ckan = Ckan(CKAN_DOMAIN)
     
     def get_resource_mdata(self)->list:
 

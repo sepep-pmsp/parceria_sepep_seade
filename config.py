@@ -32,3 +32,4 @@ def create_folder_if_not_exists(folder:str)->str:
 
 CKAN_DOMAIN = get_my_env_var('CKAN_DOMAIN')
 DATA_FOLDER = create_folder_if_not_exists(anchor_folder(get_my_env_var('DATA_FOLDER')))
+MAPBOX_ACCESS_TOKEN = get_my_env_var('MAPBOX_ACCESS_TOKEN')

@@ -35,6 +35,8 @@ pib_package = pib_package.reset_index(drop=True)
 born_alive_package = born_alive_package.reset_index(drop=True)
 country_code_package = country_code_package.reset_index(drop=True)
 
+
+#aqui já é outro transformer
 dataframes = [population_package, pib_package, born_alive_package]
 
 pivot = country_code_package.copy()

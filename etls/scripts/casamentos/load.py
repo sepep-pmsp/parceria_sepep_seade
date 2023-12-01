@@ -1,6 +1,6 @@
-from .transform_casamentos import Transformer
-import os
+from .transform import Transformer
 import pandas as pd
+from etls.utils.path import check_file_exists, solve_path
 from config import DATA_FOLDER
 
 class Load:
@@ -12,12 +12,8 @@ class Load:
         self.transform = Transformer(verbose)
 
         self.df_gen = self.transform()
-        self.file_name_path = os.path.join(DATA_FOLDER, self.file_name)
+        self.file_name_path = solve_path(self.file_name, DATA_FOLDER)
 
-    def check_file_exists(self):
-
-        return os.path.exists(self.file_name_path)
-    
     def pipeline(self):
 
         final = []
@@ -33,7 +29,7 @@ class Load:
     
     def load(self)->pd.DataFrame:
 
-        if self.check_file_exists():
+        if check_file_exists(self.file_name_path):
             return pd.read_parquet(self.file_name_path)
         
         return self.pipeline()

@@ -1,10 +1,11 @@
 from .extract import Extract
 from .transform import Transform
 from .load import Load
+from ..base_etl_class import ETL
 
 import pandas as pd
 
-class ETL:
+class ETL(ETL):
 
     def __init__(self):
 

@@ -16,6 +16,13 @@ def solve_path(path, parent = None):
 
     return os.path.abspath(path)
 
+def check_file_exists(file, parent=None):
+
+    if parent:
+        file = solve_path(file, parent)
+
+    return os.path.exists(file) and os.path.isfile(file)
+
 def check_dir_exists(folder, parent=None):
 
     if parent:
