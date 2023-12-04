@@ -116,7 +116,7 @@ def render_page_content(pathname):
             html.Hr(),
             html.P(f"The pathname {pathname} was not recognised..."),
         ],
-        className="p-3 bg-light rounded-3",
+        className="hero p-3 bg-light rounded-3",
     )
 
 
