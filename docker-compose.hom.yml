@@ -51,6 +51,8 @@ services:
       - dagster
       - api
       - grpc
+    volumes:
+      - data-folder:${DATA_FOLDER}
     restart: always
     networks:
       - dagster_network
@@ -85,8 +87,6 @@ services:
       DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
       DAGSTER_PG_DB: ${DAGSTER_PG_DB}
       DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
-    volumes: # Make docker client accessible so we can terminate containers from the webserver
-      - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - dagster_network
     depends_on:
@@ -114,16 +114,39 @@ services:
       DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
       DAGSTER_PG_DB: ${DAGSTER_PG_DB}
       DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
-    volumes: # Make docker client accessible so we can terminate containers from the webserver
-      - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - dagster_network
     depends_on:
       - dagster_db
       - dagster_grpc
 
+  # This service runs the dash app
+  dash:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_dashboard
+      args:
+        DASH_HOME: ${DASH_HOME}
+        DATA_FOLDER: ${DATA_FOLDER}
+    entrypoint:
+      - python
+      - -u
+      - app.py
+    container_name: dash
+    environment:
+      CKAN_DOMAIN: ${CKAN_DOMAIN}
+      DATA_FOLDER: ${DATA_FOLDER}
+      MAPBOX_ACCESS_TOKEN: ${MAPBOX_ACCESS_TOKEN}
+    expose:
+      - 8050
+    ports:
+      - 8050:8050
+    volumes:
+      - data-folder:${DATA_FOLDER}
+      
 volumes:
   dagster-db-data:
+  data-folder:
             
 networks:
   dagster_network:
