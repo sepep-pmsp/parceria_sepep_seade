@@ -128,10 +128,6 @@ services:
       args:
         DASH_HOME: ${DASH_HOME}
         DATA_FOLDER: ${DATA_FOLDER}
-    entrypoint:
-      - python
-      - -u
-      - app.py
     container_name: dash
     environment:
       CKAN_DOMAIN: ${CKAN_DOMAIN}

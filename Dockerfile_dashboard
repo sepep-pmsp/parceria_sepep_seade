@@ -31,3 +31,7 @@ VOLUME ${DATA_FOLDER}
 EXPOSE 8050
 
 WORKDIR ${DASH_HOME}
+
+ENTRYPOINT [ "python" ]
+
+CMD [ "app.py" ]
