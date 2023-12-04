@@ -5,11 +5,18 @@ from components.map import Map
 from components.banner import Banner
 from components.dropdown_com_grafico import Dropdown_com_grafico
 from components.outros_graficos import Outros_graficos
+from components.sidebar import Sidebar
 
 
 class Layout:
 
     def __init__(self):
+
+        self.location = html.Div(dcc.Location(id="url"))
+
+        self.sidebar = Sidebar()
+        self.sidebar_div = self.sidebar()
+        
         self.mapa = Map()
         self.mapa_div = self.mapa.pipeline()
 
@@ -35,17 +42,15 @@ class Layout:
         self.recarregar_municipio_aleatorio()
 
         layout = html.Div(
-            [
-                self.banner_div,
-                html.Div(
-                    [
-                        html.Div([self.mapa_div, self.dropdown_com_grafico_div], className='map_and_graph'),
-                        self.outros_graficos_div,
-                    ],
-                    className='hero'
-                ),
-            ],
-        )
+            [   self.banner_div,
+             
+                self.sidebar_div,
+
+                self.location,
+
+                html.Div([], id='page-content')
+                          
+            ])
 
         return layout
 

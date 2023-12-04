@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+
 }
 
 :root{
@@ -16,10 +18,14 @@ body{
 
 }
 
+p{
+  color: white;
+}
+
 
 .banner_div{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 2rem;
     align-items: center;
 
@@ -45,6 +51,9 @@ body{
     justify-content: space-between;
     padding: 2rem;
 
+    margin-left: 7rem;
+    margin-right: 2rem;
+    padding: 2rem 1rem;
 }
 
 .graph{
@@ -85,6 +94,118 @@ body{
 .pib_graph{
     margin-top: 24px;
 }
+
+
+/* This creates a skinny side bar fixed to the left of the page */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5rem;
+    padding: 2rem 1rem;
+    background-color: #000000;
+    z-index: 1050;
+    transition: width 0.1s ease-in-out;
+  }
+  
+  /* when the user hovers on the sidebar, expand it */
+  .sidebar:hover {
+    width: 20rem;
+  }
+  
+  /* make sure the contents of the navlink don't wrap when navbar collapses */
+  .sidebar .nav-link {
+    padding-top: 5rem;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .sidebar .nav-link:hover {
+    padding-top: 5rem;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(240, 100, 0, 40)
+
+  }
+  
+  /* fix the width of the icons */
+  .sidebar .nav-link i {
+    gap: 1rem;
+    width: 1rem;
+    color: rgba(240, 100, 0, 40)
+  }
+
+
+  
+  /* hide the navlink labels by default */
+  .sidebar .nav-link span {
+    visibility: hidden;
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
+  /* when the sidebar is hovered, reveal the labels */
+  .sidebar:hover .nav-link span {
+    visibility: visible;
+    opacity: 1;
+    color: white
+  }
+
+  .sidebar:hover .nav-link span:hover {
+    visibility: visible;
+    opacity: 1;
+    color: rgba(240, 100, 0, 40)
+  }
+  
+  /* container for the sidebar header. make sure the contents don't wrap when
+   * the sidebar is collapsed.
+   */
+  .sidebar-header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    
+  }
+  
+  /* position the header relative to the logo and hide by default */
+  .sidebar-header h2 {
+    opacity: 0;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
+  /* reveal the header when the sidebar is toggled */
+  .sidebar:hover .sidebar-header h2 {
+    opacity: 1;
+  }
+  
+  /* position the content relative to the collapsed sidebar */
+  .content {
+    margin-left: 7rem;
+    margin-right: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .fix{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+  }
 
 @media (max-width: 860px) {
     .banner_div{

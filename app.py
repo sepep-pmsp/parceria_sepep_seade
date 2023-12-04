@@ -1,17 +1,24 @@
 import dash
 from dash.dependencies import Input, Output
 import plotly.express as px
+import dash_bootstrap_components as dbc
+
+import json
+
+from dash import html
 
 from etls.scripts.municipios import etl as municipios
 
 from components.layout import Layout
 
-external_stylesheets = ['https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap']
+external_stylesheets = ['https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap', dbc.icons.FONT_AWESOME]
 
-app = dash.Dash(__name__, external_stylesheets= external_stylesheets)
+app = dash.Dash(__name__, external_stylesheets= external_stylesheets, suppress_callback_exceptions=True)
 df_municipios = municipios()
 
 layout = Layout()
+
+
 
 
     
@@ -86,6 +93,31 @@ def update_line_chart_pib(cod_mun):
     fig.update_traces(line_color='rgba(240, 100, 0, 40)', line_width=5)
 
     return fig
+
+@app.callback(
+        Output("page-content", "children"), 
+        [Input("url", "pathname")])
+
+def render_page_content(pathname):
+    if pathname == "/":
+        return html.Div([html.Div([layout.mapa_div, layout.dropdown_com_grafico_div], className='map_and_graph', ),
+                          layout.outros_graficos_div,],className='hero')
+                          
+
+    elif pathname == "/about":
+        return html.Div([html.Div([html.P('Minim laboris aliquip incididunt aliqua et velit aliqua exercitation tempor laborum ut deserunt proident do. Reprehenderit cupidatat incididunt quis nisi Lorem qui ex ad. Magna sint elit dolore ipsum laborum sunt mollit elit cupidatat quis ex duis in. Culpa minim irure enim sint ex nisi excepteur consequat reprehenderit occaecat quis. Non dolor non do fugiat cupidatat nisi sint.')], className='map_and_graph', ),
+                          ],className='hero')
+    elif pathname == "/data":
+        return html.Div([html.Div([html.P('Commodo commodo culpa ullamco velit voluptate id eiusmod deserunt. Officia dolore aliquip aute eiusmod consectetur incididunt exercitation id enim do velit. Proident labore esse consequat aute et occaecat ad aliquip enim ea veniam Lorem. In sunt cillum Lorem in duis laborum enim occaecat ipsum ut duis. Aute deserunt adipisicing eu deserunt aliqua esse ad dolore. Enim duis esse id nostrud laborum.')], className='map_and_graph', ),
+                          ],className='hero')
+    return html.Div(
+        [
+            html.H1("404: Not found", className="text-danger"),
+            html.Hr(),
+            html.P(f"The pathname {pathname} was not recognised..."),
+        ],
+        className="p-3 bg-light rounded-3",
+    )
 
 
 if __name__ == "__main__":
