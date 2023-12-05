@@ -1,0 +1,31 @@
+FROM python:3.10-slim
+
+# Install libraries needed to run the api
+COPY ./requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
+
+ARG API_HOME
+ARG DATA_FOLDER
+
+# Add repository code
+RUN mkdir -p ${API_HOME}
+
+# Copy your code  to API_HOME
+COPY ./v1/ ${API_HOME}v1
+COPY ./api_core/ ${API_HOME}api_core
+
+COPY ./config.py ${API_HOME}config.py
+
+RUN mkdir -p ${DATA_FOLDER}
+
+VOLUME ${DATA_FOLDER}
+
+# Run fastAPI on port 8050
+EXPOSE 8050
+
+WORKDIR ${API_HOME}
+
+ENTRYPOINT [ "uvicorn" ]
+
+CMD ["v1:pib_routes", "--host", "0.0.0.0", "--port", "8050"]
