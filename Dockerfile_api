@@ -28,4 +28,4 @@ WORKDIR ${API_HOME}
 
 ENTRYPOINT [ "uvicorn" ]
 
-CMD ["v1:pib_routes", "--host", "0.0.0.0", "--port", "8050"]
+CMD ["v1:pib_routes", "--host", "0.0.0.0", "--port", "8051"]
