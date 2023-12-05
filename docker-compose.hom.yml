@@ -152,6 +152,7 @@ services:
     environment:
       - CKAN_DOMAIN
       - DATA_FOLDER
+      - MAPBOX_ACCESS_TOKEN
     expose:
       - 8051
     ports:
