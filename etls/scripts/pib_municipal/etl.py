@@ -46,15 +46,15 @@ class ETL(ETL):
         if save_csvs:
             self.save_as_csvs()
             return
-        
-        if save_single_csv:
-            self.save_as_single_csv()
-            return
 
         if return_df and save_single_csv:
             df = self.concat_dataframes()
             self.save_as_single_csv(df)
             return df
+        
+        if save_single_csv:
+            self.save_as_single_csv()
+            return
 
         if return_df:
             return self.concat_dataframes()

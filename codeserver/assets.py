@@ -5,6 +5,7 @@ from dagster import (
     asset,
     get_dagster_logger,
 )  # import the `dagster` library
+from etls import PibMunicipal
 from etls.utils import solve_path
 from config import DATA_FOLDER
 import json
@@ -60,3 +61,20 @@ def municipios(
     file_name_path = solve_path('raw_municipios.json', DATA_FOLDER)
     with open(file_name_path, 'w') as f:
         f.write(json.dumps(results))
+
+@asset
+def pib_municipal(context: AssetExecutionContext) -> None:
+    client = PibMunicipal()
+    df = client(save_single_csv=True, return_df=True)
+
+    n = 10
+
+    peek = df.sample(n)
+
+    context.add_output_metadata(
+        metadata={
+            'registros': df.shape[0],
+            f'amostra de {n} registros': MetadataValue.md(peek.to_markdown()),
+        }
+    )
+
