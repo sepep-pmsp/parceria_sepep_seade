@@ -61,6 +61,7 @@ graphql-relay==3.2.0
 greenlet==3.0.1
 grpcio==1.59.3
 grpcio-health-checking==1.59.3
+gunicorn==21.2.0
 h11==0.14.0
 httptools==0.6.1
 humanfriendly==10.0

@@ -32,6 +32,6 @@ EXPOSE 8050
 
 WORKDIR ${DASH_HOME}
 
-ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "gunicorn" ]
 
-CMD [ "app.py" ]
+CMD ["app:server", "-b", "0.0.0.0:8050"]
