@@ -6,6 +6,7 @@ from dagster import (
     get_dagster_logger,
 )  # import the `dagster` library
 from etls import PibMunicipal
+from etls.scripts.municipios import ETL as Municipios
 from etls.utils import solve_path
 from config import DATA_FOLDER
 import json
@@ -34,6 +35,7 @@ def ufs(
         deps=[ufs]
 )
 def municipios(
+def municipios_ibge(
     context: AssetExecutionContext,
     ibge_api: IBGE_api
 ) -> None:
@@ -66,6 +68,22 @@ def municipios(
 def pib_municipal(context: AssetExecutionContext) -> None:
     client = PibMunicipal()
     df = client(save_single_csv=True, return_df=True)
+
+    n = 10
+
+    peek = df.sample(n)
+
+    context.add_output_metadata(
+        metadata={
+            'registros': df.shape[0],
+            f'amostra de {n} registros': MetadataValue.md(peek.to_markdown()),
+        }
+    )
+
+@asset
+def municipios(context: AssetExecutionContext) -> None:
+    client = Municipios()
+    df = client(use_existing_file=False)
 
     n = 10
 
