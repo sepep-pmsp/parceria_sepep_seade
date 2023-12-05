@@ -139,6 +139,25 @@ services:
       - 8050:8050
     volumes:
       - data-folder:${DATA_FOLDER}
+
+  # This service runs the dash api
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_api
+      args:
+        - API_HOME
+        - DATA_FOLDER
+    container_name: api
+    environment:
+      - CKAN_DOMAIN
+      - DATA_FOLDER
+    expose:
+      - 8051
+    ports:
+      - 8051:8051
+    volumes:
+      - data-folder:${DATA_FOLDER}
       
 volumes:
   dagster-db-data:
