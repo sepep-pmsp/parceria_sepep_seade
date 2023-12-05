@@ -27,11 +27,11 @@ RUN mkdir -p ${DATA_FOLDER}
 
 VOLUME ${DATA_FOLDER}
 
-# Run dash on port 8050
-EXPOSE 8050
+# expose dash on port
+EXPOSE ${PORT}
 
 WORKDIR ${DASH_HOME}
 
 ENTRYPOINT [ "gunicorn" ]
 
-CMD ["app:server", "-b", "0.0.0.0:8050"]
+CMD ["app:server"]

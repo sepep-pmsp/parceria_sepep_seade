@@ -126,17 +126,17 @@ services:
       context: .
       dockerfile: ./Dockerfile_dashboard
       args:
-        DASH_HOME: ${DASH_HOME}
-        DATA_FOLDER: ${DATA_FOLDER}
+        DATA_FOLDER:
     container_name: dash
     environment:
-      CKAN_DOMAIN: ${CKAN_DOMAIN}
-      DATA_FOLDER: ${DATA_FOLDER}
-      MAPBOX_ACCESS_TOKEN: ${MAPBOX_ACCESS_TOKEN}
+      CKAN_DOMAIN:
+      DATA_FOLDER:
+      MAPBOX_ACCESS_TOKEN:
+      PORT: ${DASH_PORT}
     expose:
-      - 8050
+      - ${DASH_PORT}
     ports:
-      - 8050:8050
+      - ${DASH_PORT}:${DASH_PORT}
     volumes:
       - data-folder:${DATA_FOLDER}
 
