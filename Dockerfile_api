@@ -22,11 +22,11 @@ RUN mkdir -p ${DATA_FOLDER}
 
 VOLUME ${DATA_FOLDER}
 
-# Run fastAPI on port 8050
-EXPOSE 8050
+# Run fastAPI on port
+EXPOSE ${API_PORT}
 
 WORKDIR ${API_HOME}
 
 ENTRYPOINT [ "uvicorn" ]
 
-CMD ["api:app", "--host", "0.0.0.0", "--port", "8051"]
+CMD [ "api:app" ]

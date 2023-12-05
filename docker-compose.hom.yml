@@ -126,6 +126,7 @@ services:
       context: .
       dockerfile: ./Dockerfile_dashboard
       args:
+        DASH_HOME:
         DATA_FOLDER:
     container_name: dash
     environment:
@@ -146,17 +147,19 @@ services:
       context: .
       dockerfile: ./Dockerfile_api
       args:
-        - API_HOME
-        - DATA_FOLDER
+        API_HOME:
+        DATA_FOLDER:
     container_name: api
     environment:
-      - CKAN_DOMAIN
-      - DATA_FOLDER
-      - MAPBOX_ACCESS_TOKEN
+      CKAN_DOMAIN:
+      DATA_FOLDER:
+      MAPBOX_ACCESS_TOKEN:
+      UVICORN_PORT: ${API_PORT}
+      UVICORN_HOST: 0.0.0.0
     expose:
-      - 8051
+      - ${API_PORT}
     ports:
-      - 8051:8051
+      - ${API_PORT}:${API_PORT}
     volumes:
       - data-folder:${DATA_FOLDER}
       
