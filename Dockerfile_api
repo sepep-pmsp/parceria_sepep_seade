@@ -16,6 +16,7 @@ COPY ./v1/ ${API_HOME}v1
 COPY ./api_core/ ${API_HOME}api_core
 
 COPY ./config.py ${API_HOME}config.py
+COPY ./api.py ${API_HOME}api.py
 
 RUN mkdir -p ${DATA_FOLDER}
 
@@ -28,4 +29,4 @@ WORKDIR ${API_HOME}
 
 ENTRYPOINT [ "uvicorn" ]
 
-CMD ["v1:pib_routes", "--host", "0.0.0.0", "--port", "8051"]
+CMD ["api:app", "--host", "0.0.0.0", "--port", "8051"]
