@@ -207,11 +207,29 @@ p{
 
   }
 
+@media (max-width: 1050px) {
+    .texto_logo{
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 960px) {
+    .texto_logo{
+        font-size: 2.8rem;
+    }
+}
+
+
 @media (max-width: 860px) {
     .banner_div{
         flex-direction: column;
         padding: 1rem;
+        margin-left: 5rem;
 
+    }
+
+    .texto_logo{
+        font-size: 2.2rem;
     }
 
     .imagem_logo{
