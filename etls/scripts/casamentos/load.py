@@ -27,13 +27,13 @@ class Load:
 
         return df_final
     
-    def load(self)->pd.DataFrame:
+    def load(self, use_existing_file)->pd.DataFrame:
 
-        if check_file_exists(self.file_name_path):
+        if use_existing_file and check_file_exists(self.file_name_path):
             return pd.read_parquet(self.file_name_path)
         
         return self.pipeline()
     
-    def __call__(self):
+    def __call__(self, use_existing_file):
 
-        return self.load()
+        return self.load(use_existing_file)

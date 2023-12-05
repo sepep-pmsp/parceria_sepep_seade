@@ -1,0 +1,16 @@
+FROM python:3.10-slim
+
+COPY ./requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
+
+ARG DAGSTER_HOME
+
+ARG DAGSTER_MODULE_NAME
+
+RUN mkdir -p ${DAGSTER_HOME}
+
+# Copy dagster instance YAML to /opt/dagster/dagster_home/
+COPY dagster.yaml workspace.yaml ${DAGSTER_HOME}
+
+WORKDIR ${DAGSTER_HOME}

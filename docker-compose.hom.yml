@@ -1,0 +1,173 @@
+version: "3.7"
+
+services:
+  # This service runs the postgres DB used by dagster for run storage, schedule storage,
+  # and event log storage.
+  dagster_db:
+    image: postgres:11
+    container_name: ${DAGSTER_PG_HOST}
+    environment:
+      POSTGRES_USER: ${DAGSTER_PG_USERNAME}
+      POSTGRES_PASSWORD: ${DAGSTER_PG_PASSWORD}
+      POSTGRES_DB: ${DAGSTER_PG_DB}
+    volumes:
+      - dagster-db-data:/var/lib/postgresql/data
+    networks:
+      - dagster_network
+
+  # This service runs the gRPC server that loads your user code, in both dagster-webserver
+  # and dagster-daemon. By setting DAGSTER_CURRENT_IMAGE to its own image, we tell the
+  # run launcher to use this same image when launching runs in a new container as well.
+  # Multiple containers like this can be deployed separately - each just needs to run on
+  # its own port, and have its own entry in the workspace.yaml file that's loaded by the
+  # webserver.
+  dagster_grpc:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_gRPC
+      args:
+        DAGSTER_HOME: ${DAGSTER_HOME}
+        DAGSTER_MODULE_NAME: ${DAGSTER_MODULE_NAME}
+        DATA_FOLDER: ${DATA_FOLDER}
+    container_name: dagster_grpc
+    image: dagster_grpc
+    environment:
+      DAGSTER_PG_HOST: ${DAGSTER_PG_HOST}
+      DAGSTER_PG_PORT: ${DAGSTER_PG_PORT}
+      DAGSTER_PG_USERNAME: ${DAGSTER_PG_USERNAME}
+      DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
+      DAGSTER_PG_DB: ${DAGSTER_PG_DB}
+      DAGSTER_CURRENT_IMAGE: "dagster_grpc"
+      DAGSTER_GRPC_HOST: "0.0.0.0"
+      DAGSTER_GRPC_PORT: "4000"
+      DAGSTER_WORKING_DIRECTORY: ${DAGSTER_HOME}
+      DAGSTER_MODULE_NAME: ${DAGSTER_MODULE_NAME}
+      DAGSTER_LOCAL_COMPUTE_LOG_DIR: ${DAGSTER_LOCAL_COMPUTE_LOG_DIR}
+      DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
+      CKAN_DOMAIN: ${CKAN_DOMAIN}
+      DATA_FOLDER: ${DATA_FOLDER}
+      MAPBOX_ACCESS_TOKEN: ${MAPBOX_ACCESS_TOKEN}
+    entrypoint:
+      - dagster
+      - api
+      - grpc
+    volumes:
+      - data-folder:${DATA_FOLDER}
+    restart: always
+    networks:
+      - dagster_network
+
+  # This service runs dagster-webserver, which loads your user code from the user code container.
+  # Since our instance uses the QueuedRunCoordinator, any runs submitted from the webserver will be put on
+  # a queue and later dequeued and launched by dagster-daemon.
+  dagster_webserver:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_dagster
+      args:
+        DAGSTER_HOME: ${DAGSTER_HOME}
+    entrypoint:
+      - dagster-webserver
+      - -h
+      - "0.0.0.0"
+      - -p
+      - "3000"
+      - -w
+      - workspace.yaml
+    container_name: dagster_webserver
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    environment:
+      DAGSTER_HOME: ${DAGSTER_HOME}
+      DAGSTER_PG_HOST: ${DAGSTER_PG_HOST}
+      DAGSTER_PG_PORT: ${DAGSTER_PG_PORT}
+      DAGSTER_PG_USERNAME: ${DAGSTER_PG_USERNAME}
+      DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
+      DAGSTER_PG_DB: ${DAGSTER_PG_DB}
+      DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
+    networks:
+      - dagster_network
+    depends_on:
+      - dagster_db
+      - dagster_grpc
+
+  # This service runs dagster-webserver, which loads your user code from the user code container.
+  # Since our instance uses the QueuedRunCoordinator, any runs submitted from the webserver will be put on
+  # a queue and later dequeued and launched by dagster-daemon.
+  dagster_daemon:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_dagster
+      args:
+        DAGSTER_HOME: ${DAGSTER_HOME}
+    entrypoint:
+      - dagster-daemon
+      - run
+    container_name: dagster_daemon
+    environment:
+      DAGSTER_HOME: ${DAGSTER_HOME}
+      DAGSTER_PG_HOST: ${DAGSTER_PG_HOST}
+      DAGSTER_PG_PORT: ${DAGSTER_PG_PORT}
+      DAGSTER_PG_USERNAME: ${DAGSTER_PG_USERNAME}
+      DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
+      DAGSTER_PG_DB: ${DAGSTER_PG_DB}
+      DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
+    networks:
+      - dagster_network
+    depends_on:
+      - dagster_db
+      - dagster_grpc
+
+  # This service runs the dash app
+  dash:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_dashboard
+      args:
+        DASH_HOME:
+        DATA_FOLDER:
+    container_name: dash
+    environment:
+      CKAN_DOMAIN:
+      DATA_FOLDER:
+      MAPBOX_ACCESS_TOKEN:
+      PORT: ${DASH_PORT}
+    expose:
+      - ${DASH_PORT}
+    ports:
+      - ${DASH_PORT}:${DASH_PORT}
+    volumes:
+      - data-folder:${DATA_FOLDER}
+
+  # This service runs the dash api
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_api
+      args:
+        API_HOME:
+        DATA_FOLDER:
+    container_name: api
+    environment:
+      CKAN_DOMAIN:
+      DATA_FOLDER:
+      MAPBOX_ACCESS_TOKEN:
+      UVICORN_PORT: ${API_PORT}
+      UVICORN_HOST: 0.0.0.0
+    expose:
+      - ${API_PORT}
+    ports:
+      - ${API_PORT}:${API_PORT}
+    volumes:
+      - data-folder:${DATA_FOLDER}
+      
+volumes:
+  dagster-db-data:
+  data-folder:
+            
+networks:
+  dagster_network:
+    driver: bridge
+    name: dagster_network

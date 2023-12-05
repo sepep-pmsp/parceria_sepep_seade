@@ -133,3 +133,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Dagster development files
+
+.nux/
+.telemetry/

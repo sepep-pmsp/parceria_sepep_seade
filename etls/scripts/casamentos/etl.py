@@ -7,6 +7,6 @@ class ETL(ETL):
 
         self.load = Load()
 
-    def __call__(self):
+    def __call__(self, use_existing_file=True):
 
-        return self.load()
+        return self.load(use_existing_file)
