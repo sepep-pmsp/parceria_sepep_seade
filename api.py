@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from v1 import pib_routes
+from v1 import pib_routes, municipio_routes, casamentos_routes
 
 
 #pode colocar markdown
@@ -26,3 +26,6 @@ app = FastAPI(openapi_url="/",
 
     
 app.include_router(pib_routes, prefix="/v1/pib")
+app.include_router(municipio_routes, prefix="/v1/municipio")
+app.include_router(casamentos_routes, prefix="/v1/casamentos")
+

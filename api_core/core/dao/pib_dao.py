@@ -2,7 +2,7 @@ import pandas as pd
 from functools import partial
 from .load_pib_csv import LoadPibCSV
 
-class PibCSVDAO:
+class PibDao:
 
     def __init__(self):
 
