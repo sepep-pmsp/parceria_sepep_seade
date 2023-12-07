@@ -6,7 +6,7 @@ from components.banner import Banner
 from components.dropdown_com_grafico import Dropdown_com_grafico
 from components.outros_graficos import Outros_graficos
 from components.sidebar import Sidebar
-
+from components.footer import Footer
 
 class Layout:
 
@@ -22,6 +22,9 @@ class Layout:
 
         self.banner = Banner()
         self.banner_div = self.banner.pipeline()
+        
+        self.footer = Footer()
+        self.footer_div = self.footer()
 
         self.dropdown_com_grafico = Dropdown_com_grafico()
         self.dropdown_com_grafico_div = self.dropdown_com_grafico.pipeline()
@@ -48,7 +51,9 @@ class Layout:
 
                 self.location,
 
-                html.Div([], id='page-content')
+                html.Div([], id='page-content'),
+
+                self.footer_div
                           
             ])
 

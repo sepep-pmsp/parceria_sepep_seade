@@ -27,6 +27,8 @@ class Sidebar:
                     ],
                     href="/about",
                     active="exact",
+                    n_clicks=0,
+                    id='horizontal-collapse-button'
                 ),
                 dbc.NavLink(
                     [
@@ -35,7 +37,22 @@ class Sidebar:
                     ],
                     href="/data",
                     active="exact",
+                    n_clicks=0,
+                    id='horizontal-collapse-button_data'
                 ),
+                
+                dbc.NavLink(
+                    [
+                        html.I(className="fab fa-github me-2"),
+                        html.Span("Github"),
+                    ],
+                    href="https://github.com/sepep-pmsp/parceria_sepep_seade",
+                    target='_blank',
+                    external_link=True
+
+
+                    
+                )
             ],
             vertical=True,
             pills=True,

@@ -6,7 +6,7 @@ import dash_bootstrap_components as dbc
 class Outros_graficos:
     def __init__(self):
 
-        self.outros_graficos_card = dbc.Card([dcc.Graph(id="grafico_linha_nascidos_vivos", className='nasc_graph'), dcc.Graph(id="grafico_linha_pib", className='pib_graph')])
+        self.outros_graficos_card = html.Div([dcc.Graph(id="grafico_linha_nascidos_vivos", className='nasc_graph'), dcc.Graph(id="grafico_linha_pib", className='pib_graph')])
         
 
     def criar_componente_final(self):
