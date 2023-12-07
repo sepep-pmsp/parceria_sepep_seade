@@ -8,7 +8,6 @@ from dagster import (
 )
 
 from . import assets
-from .resources import IBGE_api
 
 all_assets = load_assets_from_modules(
         [assets],
@@ -24,12 +23,8 @@ all_assets_schedule = ScheduleDefinition(
     job=all_assets_job, cron_schedule="0 3 * * *"  # every day at 03:00am
 )
 
-ibge_api = IBGE_api()
 
 defs = Definitions(
     assets=all_assets,
     schedules=[all_assets_schedule],
-    resources={
-        'ibge_api': ibge_api
-    },
 )
