@@ -31,9 +31,9 @@ class Dropdown_com_grafico:
         
 
     def criar_componente_final(self, opcoes_municipios, municipio_aleatorio):
-        controle_div = html.Div(
+        controle_div = dbc.Container(
             [
-                html.Div(
+                dbc.Container(
                     [
                         dcc.Dropdown(
                             id="seletor_mun",
@@ -46,7 +46,7 @@ class Dropdown_com_grafico:
             ],
             id='dropdown')
         
-        grafico_e_controle_div = html.Div([controle_div, dcc.Graph(id="grafico_linha_hab")])
+        grafico_e_controle_div = dbc.Container([controle_div, dcc.Graph(id="grafico_linha_hab")])
 
         return grafico_e_controle_div
 
