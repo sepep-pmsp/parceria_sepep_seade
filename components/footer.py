@@ -5,8 +5,8 @@ class Footer:
     def __init__(self):
 
         self.footer = dbc.Card([html.Footer([html.H3('Códigos desenvolvidos no âmbito da parceria entre CAGI/SEPEP/PMSP e SEADE/Estado de São Paulo (processo SEI 6011.2022/0002067-1).'), 
-                                             html.P('ACORDO DE COOPERAÇÃO TÉCNICA sem transferência de recursos entre PREFEITURA DO MUNICÍPIO DE SÃO PAULO, por intermédio da SECRETARIA DE GOVERNO MUNICIPAL – SGM e sua SECRETARIA EXECUTIVA DE PLANEJAMENTO E ENTREGAS PRIORITÁRIAS – SGM/SEPEP e A FUNDAÇÃO SISTEMA ESTADUAL DE ANÁLISE DE DADOS - SEADE. para cooperação e conjugação de esforços visando ao desenvolvimento de atividades de mútuo interesse na área de Ciência de Dados.')
-                                            ,
+                                             
+                                            html.Div([html.Img(src='	https://www.seade.gov.br/wp-content/themes/byvex-child/assets/images/logo-seade-home.svg', className='img'),html.Img(src='https://smae.prefeitura.sp.gov.br/assets/img/Logo%20SEPEP%20-%20Branco.svg', className='img'),html.Img(src='	https://smae.prefeitura.sp.gov.br/assets/img/GOVERNO_HORIZONTAL_FUNDO_ESCURO.png',className='img'), ],className='imagens_footer')
                                              ])])
 
 

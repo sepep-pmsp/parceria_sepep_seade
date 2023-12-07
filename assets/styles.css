@@ -160,6 +160,7 @@ footer{
   display: flex;
   flex-direction: column;
   padding-left: 6rem;
+  align-items: center;
 
 }
 
@@ -170,7 +171,7 @@ footer{
 }
 
 footer h3{
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 footer button{
@@ -292,6 +293,17 @@ footer p{
     flex-direction: column;
 
   }
+
+  .img{
+    width: 10rem;
+  }
+  .imagens_footer {
+    margin-top: 5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+}
 
 @media (max-width: 1050px) {
     .texto_logo{
