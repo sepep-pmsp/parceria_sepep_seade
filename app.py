@@ -7,6 +7,13 @@ from dash import html
 from etls.scripts.municipios import etl as municipios
 from components.layout import Layout
 
+import os
+
+domain = os.getenv('PUBLIC_DOMAIN')
+api_path = os.getenv('API_PATH')
+protocol = os.getenv('DEFAULT_PROTOCOL')
+url = f'{protocol}://{domain}{api_path}'
+
 external_stylesheets = [ dbc.themes.CYBORG, 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap', dbc.icons.FONT_AWESOME]
 layout = Layout()
 
@@ -17,9 +24,12 @@ def reciclar_layout(div):
     return html.Div([html.Div([layout.mapa_div, layout.dropdown_com_grafico_div], className='map_and_graph', ),
                           layout.outros_graficos_div, html.Div([div], className='Modal')],className='hero')
 
+link_api = html.Span(html.A('Aqui',href=url), className='span_data')
+
 app = dash.Dash(__name__, external_stylesheets= external_stylesheets, suppress_callback_exceptions=True)
 df_municipios = municipios()
 app.layout = servir_layout
+
 
 
 
@@ -82,11 +92,8 @@ def render_page_content(pathname):
         return reciclar_layout(html.Div(
             dbc.Collapse(
                 dbc.Card(
-                    dbc.CardBody([html.H1('Dados'),html.P('''Os dados apresentados neste dashboard foram inicialmente coletados por meio da API do CKAN da SEADE, abrangendo diversas fontes, como Microdados de casamentos ocorridos nos municípios do Estado de São Paulo, População por municípios de 2000 a 2021, PIB Municipal de 2002 a 2020, estatísticas de Nascidos Vivos por sexo em 2021, Nascidos Vivos de 2000 a 2020 e a Tabela de município/UF/País.
-
-Após a extração destes dados via API, realizamos diversas etapas de processamento para garantir a qualidade e uniformidade das informações. Inicialmente, renomeamos as colunas visando padronizar a estrutura dos dados finais. Posteriormente, procedemos à filtragem das colunas de interesse e à limpeza de dados referentes a localidades fora do estado de São Paulo.
-
-Além disso, aplicamos filtros específicos para isolar os dados primordiais, concentrando-nos, por exemplo, em casamentos realizados exclusivamente com pessoas do estado de São Paulo com indivíduos de diferentes municípios. Após essas transformações, os dados tratados foram mesclados em um único quadro de dados, acessível por meio de nossa API, disponível [inserir link para a API aqui].''')],
+                    dbc.CardBody([html.H1('Dados'),html.P('''Os dados apresentados neste dashboard foram inicialmente coletados por por meio da API do CKAN mantido pela Fundação SEADE, abrangendo diversas fontes, como Microdados de casamentos ocorridos nos municípios do Estado de São Paulo, População por municípios de 2000 a 2021, PIB Municipal de 2002 a 2020, estatísticas de Nascidos Vivos por sexo em 2021, Nascidos Vivos de 2000 a 2020 e a Tabela de município/UF/País.
+Após a extração destes dados via API, realizamos diversas etapas de processamento para garantir a qualidade e uniformidade das informações. Inicialmente, renomeamos as colunas visando padronizar a estrutura dos dados finais. Posteriormente, procedemos à filtragem mantando apenas casamentos realizados entre pessoas do município de São Paulo e indivíduos de outros municípios do estado de São Paulo. Após essas transformações, os dados tratados para gerar as visualizações disponíveis neste dashboard. Esses dados também estão acessíveis por meio de nossa API, disponível '''), link_api], class_name='texto_data',
                         
                     ),
                     style={"width": "104rem"}, id='card_collapse'
