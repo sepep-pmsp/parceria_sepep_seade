@@ -97,12 +97,13 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.dagster.entrypoints=web"
-      - "traefik.http.routers.dagster.rule=(Host(`${INTRANET_DOMAIN}`) || Host(`www.${INTRANET_DOMAIN}`)) && Path(`${DAGSTER_PATH}`)"
+      - "traefik.http.routers.dagster.rule=(Host(`${INTRANET_DOMAIN}`) || Host(`www.${INTRANET_DOMAIN}`)) && PathPrefix(`${DAGSTER_PATH}`)"
       - "traefik.http.services.dagster.loadbalancer.server.port=3000"
-      - "traefik.http.routers.dagster.middlewares=dagster-ratelimit"
+      - "traefik.http.routers.dagster.middlewares=dagster-ratelimit,dagster-stripprefix"
       - "traefik.http.middlewares.dagster-ratelimit.ratelimit.average=1000"
       - "traefik.http.middlewares.dagster-ratelimit.ratelimit.period=10s"
       - "traefik.http.middlewares.dagster-ratelimit.ratelimit.burst=500"
+      - "traefik.http.middlewares.dagster-stripprefix.stripprefix.prefixes=${DAGSTER_PATH}"
 
   # This service runs dagster-webserver, which loads your user code from the user code container.
   # Since our instance uses the QueuedRunCoordinator, any runs submitted from the webserver will be put on
@@ -195,6 +196,10 @@ services:
       MAPBOX_ACCESS_TOKEN:
       UVICORN_PORT: ${API_PORT}
       UVICORN_HOST: 0.0.0.0
+    command:
+      - api:app
+      - --root-path
+      - /api
     expose:
       - ${API_PORT}
     ports:
@@ -206,12 +211,13 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.api.entrypoints=web"
-      - "traefik.http.routers.api.rule=(Host(`${PUBLIC_DOMAIN}`) || Host(`www.${PUBLIC_DOMAIN}`)) && Path(`${API_PATH}`)"
+      - "traefik.http.routers.api.rule=(Host(`${PUBLIC_DOMAIN}`) || Host(`www.${PUBLIC_DOMAIN}`)) && PathPrefix(`${API_PATH}`)"
       - "traefik.http.services.api.loadbalancer.server.port=${API_PORT}"
-      - "traefik.http.routers.api.middlewares=api-ratelimit"
+      - "traefik.http.routers.api.middlewares=api-ratelimit,api-stripprefix"
       - "traefik.http.middlewares.api-ratelimit.ratelimit.average=1000"
       - "traefik.http.middlewares.api-ratelimit.ratelimit.period=10s"
       - "traefik.http.middlewares.api-ratelimit.ratelimit.burst=500"
+      - "traefik.http.middlewares.api-stripprefix.stripprefix.prefixes=${API_PATH}"
       
 volumes:
   dagster-db-data:
