@@ -235,6 +235,7 @@ services:
 volumes:
   dagster-db-data:
   data-folder:
+  traefik-data:
             
 networks:
   dagster_network:
