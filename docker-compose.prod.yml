@@ -95,8 +95,9 @@ services:
       - dagster_grpc
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.dagster.entrypoints=web"
+      - "traefik.http.routers.dagster.entrypoints=websecure"
       - "traefik.http.routers.dagster.rule=(Host(`${INTRANET_DOMAIN}`) || Host(`www.${INTRANET_DOMAIN}`)) && PathPrefix(`${DAGSTER_PATH}`)"
+      - "traefik.http.routers.dagster.tls=true"
       - "traefik.http.services.dagster.loadbalancer.server.port=3000"
       - "traefik.http.routers.dagster.middlewares=dagster-ratelimit"
       - "traefik.http.middlewares.dagster-ratelimit.ratelimit.average=1000"
