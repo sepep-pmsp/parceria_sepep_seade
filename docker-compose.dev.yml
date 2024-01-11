@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  # This service runs the postgres DB used by dagster for run storage, schedule storage,
+  # and event log storage.
+  dagster_db:
+    image: postgres:11
+    container_name: ${DAGSTER_PG_HOST}
+    environment:
+      POSTGRES_USER: ${DAGSTER_PG_USERNAME}
+      POSTGRES_PASSWORD: ${DAGSTER_PG_PASSWORD}
+      POSTGRES_DB: ${DAGSTER_PG_DB}
+    volumes:
+      - dagster-db-data:/var/lib/postgresql/data
+    expose:
+      - ${DAGSTER_PG_PORT}
+    ports:
+      - ${DAGSTER_PG_PORT}:${DAGSTER_PG_PORT}
+    command: -p ${DAGSTER_PG_PORT}
+
+volumes:
+  dagster-db-data:

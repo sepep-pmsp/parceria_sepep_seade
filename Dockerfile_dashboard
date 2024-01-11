@@ -1,0 +1,37 @@
+FROM python:3.10-slim
+
+# Checkout and install dagster libraries needed to run the gRPC server
+# exposing your repository to dagster-webserver and dagster-daemon, and to load the DagsterInstance
+
+COPY ./requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
+
+ARG DASH_HOME
+ARG DATA_FOLDER
+
+# Add repository code
+RUN mkdir -p ${DASH_HOME}
+
+# Copy your code  to DASH_HOME
+COPY ./etls/ ${DASH_HOME}etls
+COPY ./core/ ${DASH_HOME}core
+COPY ./components/ ${DASH_HOME}components
+COPY ./assets/ ${DASH_HOME}assets
+COPY ./gen_mapa/ ${DASH_HOME}gen_mapa
+
+COPY ./app.py ${DASH_HOME}app.py
+COPY ./config.py ${DASH_HOME}config.py
+
+RUN mkdir -p ${DATA_FOLDER}
+
+VOLUME ${DATA_FOLDER}
+
+# expose dash on port
+EXPOSE ${PORT}
+
+WORKDIR ${DASH_HOME}
+
+ENTRYPOINT [ "gunicorn" ]
+
+CMD ["app:server"]

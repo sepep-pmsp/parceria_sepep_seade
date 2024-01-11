@@ -1,0 +1,229 @@
+version: "3.7"
+
+services:
+  # This service runs the postgres DB used by dagster for run storage, schedule storage,
+  # and event log storage.
+  dagster_db:
+    image: postgres:11
+    container_name: ${DAGSTER_PG_HOST}
+    environment:
+      POSTGRES_USER: ${DAGSTER_PG_USERNAME}
+      POSTGRES_PASSWORD: ${DAGSTER_PG_PASSWORD}
+      POSTGRES_DB: ${DAGSTER_PG_DB}
+    volumes:
+      - dagster-db-data:/var/lib/postgresql/data
+    networks:
+      - dagster_network
+
+  # This service runs the gRPC server that loads your user code, in both dagster-webserver
+  # and dagster-daemon. By setting DAGSTER_CURRENT_IMAGE to its own image, we tell the
+  # run launcher to use this same image when launching runs in a new container as well.
+  # Multiple containers like this can be deployed separately - each just needs to run on
+  # its own port, and have its own entry in the workspace.yaml file that's loaded by the
+  # webserver.
+  dagster_grpc:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_gRPC
+      args:
+        DAGSTER_HOME: ${DAGSTER_HOME}
+        DAGSTER_MODULE_NAME: ${DAGSTER_MODULE_NAME}
+        DATA_FOLDER: ${DATA_FOLDER}
+    container_name: dagster_grpc
+    image: dagster_grpc
+    environment:
+      DAGSTER_PG_HOST: ${DAGSTER_PG_HOST}
+      DAGSTER_PG_PORT: ${DAGSTER_PG_PORT}
+      DAGSTER_PG_USERNAME: ${DAGSTER_PG_USERNAME}
+      DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
+      DAGSTER_PG_DB: ${DAGSTER_PG_DB}
+      DAGSTER_CURRENT_IMAGE: "dagster_grpc"
+      DAGSTER_GRPC_HOST: "0.0.0.0"
+      DAGSTER_GRPC_PORT: "4000"
+      DAGSTER_WORKING_DIRECTORY: ${DAGSTER_HOME}
+      DAGSTER_MODULE_NAME: ${DAGSTER_MODULE_NAME}
+      DAGSTER_LOCAL_COMPUTE_LOG_DIR: ${DAGSTER_LOCAL_COMPUTE_LOG_DIR}
+      DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
+      CKAN_DOMAIN: ${CKAN_DOMAIN}
+      DATA_FOLDER: ${DATA_FOLDER}
+      MAPBOX_ACCESS_TOKEN: ${MAPBOX_ACCESS_TOKEN}
+    entrypoint:
+      - dagster
+      - api
+      - grpc
+    volumes:
+      - data-folder:${DATA_FOLDER}
+    restart: always
+    networks:
+      - dagster_network
+
+  # This service runs dagster-webserver, which loads your user code from the user code container.
+  # Since our instance uses the QueuedRunCoordinator, any runs submitted from the webserver will be put on
+  # a queue and later dequeued and launched by dagster-daemon.
+  dagster_webserver:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_dagster
+      args:
+        DAGSTER_HOME: ${DAGSTER_HOME}
+    entrypoint:
+      - dagster-webserver
+      - -h
+      - "0.0.0.0"
+      - -p
+      - "3000"
+      - -w
+      - workspace.yaml
+      - --path-prefix
+      - ${DAGSTER_PATH}
+    container_name: dagster_webserver
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    environment:
+      DAGSTER_HOME: ${DAGSTER_HOME}
+      DAGSTER_PG_HOST: ${DAGSTER_PG_HOST}
+      DAGSTER_PG_PORT: ${DAGSTER_PG_PORT}
+      DAGSTER_PG_USERNAME: ${DAGSTER_PG_USERNAME}
+      DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
+      DAGSTER_PG_DB: ${DAGSTER_PG_DB}
+      DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
+      DAGSTER_LOCAL_COMPUTE_LOG_DIR: ${DAGSTER_LOCAL_COMPUTE_LOG_DIR}
+    networks:
+      - dagster_network
+    depends_on:
+      - dagster_db
+      - dagster_grpc
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dagster.entrypoints=web"
+      - "traefik.http.routers.dagster.rule=(Host(`${INTRANET_DOMAIN}`) || Host(`www.${INTRANET_DOMAIN}`)) && PathPrefix(`${DAGSTER_PATH}`)"
+      - "traefik.http.services.dagster.loadbalancer.server.port=3000"
+      - "traefik.http.routers.dagster.middlewares=dagster-ratelimit"
+      - "traefik.http.middlewares.dagster-ratelimit.ratelimit.average=1000"
+      - "traefik.http.middlewares.dagster-ratelimit.ratelimit.period=10s"
+      - "traefik.http.middlewares.dagster-ratelimit.ratelimit.burst=500"
+
+  # This service runs dagster-webserver, which loads your user code from the user code container.
+  # Since our instance uses the QueuedRunCoordinator, any runs submitted from the webserver will be put on
+  # a queue and later dequeued and launched by dagster-daemon.
+  dagster_daemon:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_dagster
+      args:
+        DAGSTER_HOME: ${DAGSTER_HOME}
+    entrypoint:
+      - dagster-daemon
+      - run
+    container_name: dagster_daemon
+    environment:
+      DAGSTER_HOME: ${DAGSTER_HOME}
+      DAGSTER_PG_HOST: ${DAGSTER_PG_HOST}
+      DAGSTER_PG_PORT: ${DAGSTER_PG_PORT}
+      DAGSTER_PG_USERNAME: ${DAGSTER_PG_USERNAME}
+      DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
+      DAGSTER_PG_DB: ${DAGSTER_PG_DB}
+      DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
+    networks:
+      - dagster_network
+    depends_on:
+      - dagster_db
+      - dagster_grpc
+
+  # This service is responsible for the edge routing of all the other services 
+  traefik:
+    image: "traefik:v2.10"
+    container_name: "traefik"
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    networks:
+      - traefik-net
+      - dagster_network
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+  # This service runs the dash app
+  dash:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_dashboard
+      args:
+        DASH_HOME:
+        DATA_FOLDER:
+    container_name: dash
+    environment:
+      CKAN_DOMAIN:
+      DATA_FOLDER:
+      MAPBOX_ACCESS_TOKEN:
+      PORT: ${DASH_PORT}
+    expose:
+      - ${DASH_PORT}
+    ports:
+      - ${DASH_PORT}:${DASH_PORT}
+    volumes:
+      - data-folder:${DATA_FOLDER}
+    networks:
+      - traefik-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dashboard.entrypoints=web"
+      - "traefik.http.routers.dashboard.rule=Host(`${PUBLIC_DOMAIN}`) || Host(`www.${PUBLIC_DOMAIN}`)"
+      - "traefik.http.services.dashboard.loadbalancer.server.port=${DASH_PORT}"
+      - "traefik.http.routers.dashboard.middlewares=dashboard-ratelimit"
+      - "traefik.http.middlewares.dashboard-ratelimit.ratelimit.average=1000"
+      - "traefik.http.middlewares.dashboard-ratelimit.ratelimit.period=10s"
+      - "traefik.http.middlewares.dashboard-ratelimit.ratelimit.burst=500"
+
+  # This service runs the dash api
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_api
+      args:
+        API_HOME:
+        DATA_FOLDER:
+    container_name: api
+    environment:
+      CKAN_DOMAIN:
+      DATA_FOLDER:
+      MAPBOX_ACCESS_TOKEN:
+      UVICORN_PORT: ${API_PORT}
+      UVICORN_HOST: 0.0.0.0
+    command:
+      - api:app
+      - --root-path
+      - /api
+    expose:
+      - ${API_PORT}
+    ports:
+      - ${API_PORT}:${API_PORT}
+    volumes:
+      - data-folder:${DATA_FOLDER}
+    networks:
+      - traefik-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api.entrypoints=web"
+      - "traefik.http.routers.api.rule=(Host(`${PUBLIC_DOMAIN}`) || Host(`www.${PUBLIC_DOMAIN}`)) && PathPrefix(`${API_PATH}`)"
+      - "traefik.http.services.api.loadbalancer.server.port=${API_PORT}"
+      - "traefik.http.routers.api.middlewares=api-ratelimit,api-stripprefix"
+      - "traefik.http.middlewares.api-ratelimit.ratelimit.average=1000"
+      - "traefik.http.middlewares.api-ratelimit.ratelimit.period=10s"
+      - "traefik.http.middlewares.api-ratelimit.ratelimit.burst=500"
+      - "traefik.http.middlewares.api-stripprefix.stripprefix.prefixes=${API_PATH}"
+      
+volumes:
+  dagster-db-data:
+  data-folder:
+            
+networks:
+  dagster_network:
+  traefik-net:
