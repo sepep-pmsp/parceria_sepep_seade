@@ -173,6 +173,9 @@ services:
       DATA_FOLDER:
       MAPBOX_ACCESS_TOKEN:
       PORT: ${DASH_PORT}
+      DEFAULT_PROTOCOL:
+      PUBLIC_DOMAIN:
+      API_PATH:
     expose:
       - ${DASH_PORT}
     volumes:
