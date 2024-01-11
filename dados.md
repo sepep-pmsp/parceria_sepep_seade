@@ -1,0 +1,5 @@
+Os dados apresentados neste dashboard foram inicialmente coletados por meio da API do CKAN da SEADE, abrangendo diversas fontes, como Microdados de casamentos ocorridos nos municípios do Estado de São Paulo, População por municípios de 2000 a 2021, PIB Municipal de 2002 a 2020, estatísticas de Nascidos Vivos por sexo em 2021, Nascidos Vivos de 2000 a 2020 e a Tabela de município/UF/País.
+
+Após a extração destes dados via API, realizamos diversas etapas de processamento para garantir a qualidade e uniformidade das informações. Inicialmente, renomeamos as colunas visando padronizar a estrutura dos dados finais. Posteriormente, procedemos à filtragem das colunas de interesse e à limpeza de dados referentes a localidades fora do estado de São Paulo.
+
+Além disso, aplicamos filtros específicos para isolar os dados primordiais, concentrando-nos, por exemplo, em casamentos realizados exclusivamente com pessoas do estado de São Paulo com indivíduos de diferentes municípios. Após essas transformações, os dados tratados foram mesclados em um único quadro de dados, acessível por meio de nossa API, disponível [inserir link para a API aqui].

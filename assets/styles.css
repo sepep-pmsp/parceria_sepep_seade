@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+
 }
 
 :root{
@@ -16,10 +18,75 @@ body{
 
 }
 
+p{
+  color: white;
+}
+
+h2{
+  font-size: 2.5rem;
+}
+
+.card {
+  /* --bs-card-spacer-y: 1rem; */
+  /* --bs-card-spacer-x: 1rem; */
+  /* --bs-card-title-spacer-y: 0.5rem; */
+  /* --bs-card-title-color: ; */
+  /* --bs-card-subtitle-color: ; */
+  /* --bs-card-border-width: var(--bs-border-width); */
+  /* --bs-card-border-color: var(--bs-border-color-translucent); */
+  /* --bs-card-border-radius: var(--bs-border-radius); */
+  /* --bs-card-box-shadow: ; */
+  /* --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width))); */
+  /* --bs-card-cap-padding-y: 0.5rem; */
+  /* --bs-card-cap-padding-x: 1rem; */
+  /* --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03); */
+  /* --bs-card-cap-color: ; */
+  /* --bs-card-height: ; */
+  /* --bs-card-color: ; */
+  /* --bs-card-bg: #282828; */
+  /* --bs-card-img-overlay-padding: 1rem; */
+  /* --bs-card-group-margin: 0.75rem; */
+  /* position: relative; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* min-width: 0; */
+  /* height: var(--bs-card-height); */
+  /* color: var(--bs-body-color); */
+  /* word-wrap: break-word; */
+  /* background-color: var(--bs-card-bg); */
+  /* background-clip: border-box; */
+  /* border: var(--bs-card-border-width) solid var(--bs-card-border-color); */
+  /* border-radius: var(--bs-card-border-radius); */
+}
+
+
+.Modal{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:10%;
+  left:2%;
+  z-index:100;
+  text-align:center;
+  padding-left: 0.8vh;
+  
+  
+}
+
+#card_collapse{
+  background-color: black;
+  z-index: 100;
+
+
+}
+
+.card-body {
+  margin-left: 159px;
+}
 
 .banner_div{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 2rem;
     align-items: center;
 
@@ -45,6 +112,9 @@ body{
     justify-content: space-between;
     padding: 2rem;
 
+    margin-left: 7rem;
+    margin-right: 2rem;
+    padding: 2rem 1rem;
 }
 
 .graph{
@@ -86,11 +156,178 @@ body{
     margin-top: 24px;
 }
 
+footer{
+  display: flex;
+  flex-direction: column;
+  padding-left: 6rem;
+  align-items: center;
+
+}
+
+.card:has(> footer){
+  background-color: #00000000;
+  outline: 0px;
+  border: 0px;
+}
+
+footer h3{
+  font-size: 1rem;
+}
+
+footer button{
+  width: 5rem;
+  align-self: center;
+}
+
+footer p{
+  font-size: 1rem;
+}
+
+/* This creates a skinny side bar fixed to the left of the page */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5rem;
+    padding: 2rem 1rem;
+    background-color: #000000;
+    z-index: 1050;
+    transition: width 0.1s ease-in-out;
+  }
+  
+  
+  /* when the user hovers on the sidebar, expand it */
+  .sidebar:hover {
+    width: 20rem;
+  }
+  
+  /* make sure the contents of the navlink don't wrap when navbar collapses */
+  .sidebar .nav-link, .button {
+    padding-top: 5rem;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .sidebar .nav-link, .button:hover {
+    padding-top: 5rem;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(240, 100, 0, 40)
+
+  }
+  
+  /* fix the width of the icons */
+  .sidebar .nav-link i {
+    width: 100%;
+    color: rgba(240, 100, 0, 40)
+  }
+
+
+  
+  /* hide the navlink labels by default */
+  .sidebar .nav-link span {
+    visibility: hidden;
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
+  /* when the sidebar is hovered, reveal the labels */
+  .sidebar:hover .nav-link span {
+    visibility: visible;
+    opacity: 1;
+    color: white
+  }
+
+  .sidebar:hover .nav-link span:hover {
+    visibility: visible;
+    opacity: 1;
+    color: rgba(240, 100, 0, 40)
+  }
+  
+  /* container for the sidebar header. make sure the contents don't wrap when
+   * the sidebar is collapsed.
+   */
+  .sidebar-header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    
+  }
+  
+  /* position the header relative to the logo and hide by default */
+  .sidebar-header h2 {
+    opacity: 0;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
+  /* reveal the header when the sidebar is toggled */
+  .sidebar:hover .sidebar-header h2 {
+    opacity: 1;
+  }
+  
+  /* position the content relative to the collapsed sidebar */
+  .content {
+    margin-left: 7rem;
+    margin-right: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .fix{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+  }
+
+  .img{
+    width: 10rem;
+  }
+  .imagens_footer {
+    margin-top: 5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+@media (max-width: 1050px) {
+    .texto_logo{
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 960px) {
+    .texto_logo{
+        font-size: 2.8rem;
+    }
+}
+
+
 @media (max-width: 860px) {
     .banner_div{
         flex-direction: column;
         padding: 1rem;
+        margin-left: 5rem;
 
+    }
+
+    .texto_logo{
+        font-size: 2.2rem;
     }
 
     .imagem_logo{
