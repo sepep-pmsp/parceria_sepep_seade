@@ -6,8 +6,8 @@ class Extractor:
     
     pacotes_busca = {
         'populacao' : {
-            'nom_pkg' : 'populacao-municipal-2010-2022',
-            'search_str' : 'População por municípios - 2000 a 2021',
+            'nom_pkg' : 'populacao-residente-estado-de-sao-paulo',
+            'search_str' : 'População 2000 - 2023',
                        },
         'pib' : {
             'nom_pkg' : 'pib-municipal-2002-2020',
