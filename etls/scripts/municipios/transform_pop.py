@@ -10,6 +10,7 @@ class Transform(Base):
         df = self.rename_columns(df, 'cod_ibge', pop_total='Habitantes do Município', ano='Ano')
 
         df = df.sort_values(['cod_municipio','Ano'])
+        df = df.dropna()
 
 
         return df
