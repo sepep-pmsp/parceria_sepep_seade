@@ -11,6 +11,7 @@ class Dropdown_com_grafico:
     def __init__(self):
 
         self.df_municipios = municipios()
+        self.fig = dict(layout=dict(template ='plotly_dark', plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)', font_family="Roboto Mono" ))
 
     def receber_opcoes_municipios(self):
 
@@ -46,7 +47,7 @@ class Dropdown_com_grafico:
             ],
             id='dropdown')
         
-        grafico_e_controle_div = dbc.Container([controle_div, dcc.Graph(id="grafico_linha_hab")])
+        grafico_e_controle_div = dbc.Container([controle_div, dcc.Graph(id="grafico_linha_hab", figure=self.fig)])
 
         return grafico_e_controle_div
 
