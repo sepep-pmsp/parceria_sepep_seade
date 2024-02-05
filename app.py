@@ -12,7 +12,7 @@ import os
 domain = os.getenv('PUBLIC_DOMAIN')
 api_path = os.getenv('API_PATH')
 protocol = os.getenv('DEFAULT_PROTOCOL')
-url = f'{protocol}://{domain}{api_path}'
+url = f'{protocol}://{domain}{api_path}/docs'
 
 external_stylesheets = [ dbc.themes.CYBORG, 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap', dbc.icons.FONT_AWESOME]
 layout = Layout()
