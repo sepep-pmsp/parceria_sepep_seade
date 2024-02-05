@@ -41,7 +41,7 @@ class Extractor:
                          search_string=search_str, 
                          attr='name', 
                          how='contains', 
-                         parser_params={'sep' : ';'})
+                         parser_params={'sep' : ';', 'thousands' : '.', 'decimal' : ','})
         )
         return result
     
