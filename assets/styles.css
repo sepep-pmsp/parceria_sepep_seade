@@ -305,6 +305,10 @@ footer p{
     width: 100%;
 }
 
+.Select-input>input {
+  color: white;
+}
+
 @media (max-width: 1050px) {
     .texto_logo{
         font-size: 3.2rem;
