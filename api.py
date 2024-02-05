@@ -11,7 +11,7 @@ Desenvolvimento interno - time de **tecnologia de SEPEP** 🚀
 app = FastAPI(openapi_url="/",
     title="Parceria_SEADE_SEPEP",
     description=description,
-    version="0.0.1",
+    version="1.0.0",
     #terms_of_service="http://example.com/terms/",
     contact={
         "name": "SEPEP",
