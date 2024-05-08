@@ -24,7 +24,8 @@ def reciclar_layout(div):
     return html.Div([html.Div([layout.mapa_div, layout.dropdown_com_grafico_div], className='map_and_graph', ),
                           layout.outros_graficos_div, html.Div([div], className='Modal')],className='hero')
 
-link_api = html.Span(html.A('Aqui',href=url), className='span_data')
+link_api = html.Span(html.A('aqui',href=url), className='span_data')
+link_repo_seade = html.Span(html.A('aqui', href='https://repositorio.seade.gov.br/', className='span_data')
 
 app = dash.Dash(__name__, external_stylesheets= external_stylesheets, suppress_callback_exceptions=True)
 df_municipios = municipios()
@@ -70,13 +71,26 @@ def render_page_content(pathname):
         return html.Div([html.Div([layout.mapa_div, layout.dropdown_com_grafico_div], className='map_and_graph', ),
                           layout.outros_graficos_div,],className='hero')
                           
-
+    texto_sobre_1 = '''Este dashboard é fruto de uma parceria entre a Secretaria Executiva de Planejamento e Entregas Prioritárias, da Prefeitura de São Paulo, e a Fundação SEADE, do Governo do Estado de São Paulo.
+    Além desse dashboard, essa parceria permitiu a reorganização dos dados no repositório público disponibilizado pela SEADE, o consumo periódico automatizado de alguns desses dados e a modelagem para a disponibilização destes via API REST.
+    O repositório da SEADE pode ser acessado '''
+    texto_sobre_2 = ' e a API REST pode ser acessada '
+    
     elif pathname == "/about":
         return reciclar_layout(html.Div(
             dbc.Collapse(
                 dbc.Card(
-                    dbc.CardBody([html.H1('Sobre'),html.P("Voluptate amet nulla commodo non ea in ullamco anim labore cupidatat. Voluptate amet nulla commodo non ea in ullamco anim labore cupidatat. Voluptate amet nulla commodo non ea in ullamco anim labore cupidatat. Voluptate amet nulla commodo non ea in ullamco anim labore cupidatat. Voluptate amet nulla commodo non ea in ullamco anim labore cupidatat. Voluptate amet nulla commodo non ea in ullamco anim labore cupidatat. Voluptate amet nulla commodo non ea in ullamco anim labore cupidatat.")],
-                        
+                    dbc.CardBody(
+                        [
+                            html.H1('Sobre'),
+                            html.P(
+                                [
+                                    texto_sobre_1,
+                                    link_repo_seade,
+                                    texto_sobre_2,
+                                    link_api
+                                ])
+                         ],
                     ),
                     style={"width": "104rem"}, id='card_collapse'
                 ),
@@ -92,8 +106,8 @@ def render_page_content(pathname):
         return reciclar_layout(html.Div(
             dbc.Collapse(
                 dbc.Card(
-                    dbc.CardBody([html.H1('Dados'),html.P('''Os dados apresentados neste dashboard foram inicialmente coletados por por meio da API do CKAN mantido pela Fundação SEADE, abrangendo diversas fontes, como Microdados de casamentos ocorridos nos municípios do Estado de São Paulo, População por municípios de 2000 a 2021, PIB Municipal de 2002 a 2020, estatísticas de Nascidos Vivos por sexo em 2021, Nascidos Vivos de 2000 a 2020 e a Tabela de município/UF/País.
-Após a extração destes dados via API, realizamos diversas etapas de processamento para garantir a qualidade e uniformidade das informações. Inicialmente, renomeamos as colunas visando padronizar a estrutura dos dados finais. Posteriormente, procedemos à filtragem mantando apenas casamentos realizados entre pessoas do município de São Paulo e indivíduos de outros municípios do estado de São Paulo. Após essas transformações, os dados tratados para gerar as visualizações disponíveis neste dashboard. Esses dados também estão acessíveis por meio de nossa API, disponível '''), link_api], class_name='texto_data',
+                    dbc.CardBody([html.H1('Dados'),html.P(['''Os dados apresentados neste dashboard foram inicialmente coletados por por meio da API do CKAN mantido pela Fundação SEADE, abrangendo diversas fontes, como Microdados de casamentos ocorridos nos municípios do Estado de São Paulo, População por municípios de 2000 a 2021, PIB Municipal de 2002 a 2020, estatísticas de Nascidos Vivos por sexo em 2021, Nascidos Vivos de 2000 a 2020 e a Tabela de município/UF/País.
+Após a extração destes dados via API, realizamos diversas etapas de processamento para garantir a qualidade e uniformidade das informações. Inicialmente, renomeamos as colunas visando padronizar a estrutura dos dados finais. Posteriormente, procedemos à filtragem mantando apenas casamentos realizados entre pessoas do município de São Paulo e indivíduos de outros municípios do estado de São Paulo. Após essas transformações, os dados tratados para gerar as visualizações disponíveis neste dashboard. Esses dados também estão acessíveis por meio de nossa API, disponível ''', link_api]), class_name='texto_data',
                         
                     ),
                     style={"width": "104rem"}, id='card_collapse'
