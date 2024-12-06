@@ -12,6 +12,7 @@ services:
       POSTGRES_DB: ${DAGSTER_PG_DB}
     volumes:
       - dagster-db-data:/var/lib/postgresql/data
+    restart: always
     networks:
       - dagster_network
 
@@ -29,8 +30,8 @@ services:
         DAGSTER_HOME: ${DAGSTER_HOME}
         DAGSTER_MODULE_NAME: ${DAGSTER_MODULE_NAME}
         DATA_FOLDER: ${DATA_FOLDER}
-    container_name: dagster_grpc
     image: dagster_grpc
+    container_name: dagster_grpc
     environment:
       DAGSTER_PG_HOST: ${DAGSTER_PG_HOST}
       DAGSTER_PG_PORT: ${DAGSTER_PG_PORT}
@@ -66,6 +67,16 @@ services:
       dockerfile: ./Dockerfile_dagster
       args:
         DAGSTER_HOME: ${DAGSTER_HOME}
+    container_name: dagster_webserver
+    environment:
+      DAGSTER_HOME: ${DAGSTER_HOME}
+      DAGSTER_PG_HOST: ${DAGSTER_PG_HOST}
+      DAGSTER_PG_PORT: ${DAGSTER_PG_PORT}
+      DAGSTER_PG_USERNAME: ${DAGSTER_PG_USERNAME}
+      DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
+      DAGSTER_PG_DB: ${DAGSTER_PG_DB}
+      DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
+      DAGSTER_LOCAL_COMPUTE_LOG_DIR: ${DAGSTER_LOCAL_COMPUTE_LOG_DIR}
     entrypoint:
       - dagster-webserver
       - -h
@@ -76,20 +87,11 @@ services:
       - workspace.yaml
       - --path-prefix
       - ${DAGSTER_PATH}
-    container_name: dagster_webserver
     expose:
       - 3000
     ports:
       - 3000:3000
-    environment:
-      DAGSTER_HOME: ${DAGSTER_HOME}
-      DAGSTER_PG_HOST: ${DAGSTER_PG_HOST}
-      DAGSTER_PG_PORT: ${DAGSTER_PG_PORT}
-      DAGSTER_PG_USERNAME: ${DAGSTER_PG_USERNAME}
-      DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
-      DAGSTER_PG_DB: ${DAGSTER_PG_DB}
-      DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
-      DAGSTER_LOCAL_COMPUTE_LOG_DIR: ${DAGSTER_LOCAL_COMPUTE_LOG_DIR}
+    restart: always
     networks:
       - dagster_network
     depends_on:
@@ -114,9 +116,6 @@ services:
       dockerfile: ./Dockerfile_dagster
       args:
         DAGSTER_HOME: ${DAGSTER_HOME}
-    entrypoint:
-      - dagster-daemon
-      - run
     container_name: dagster_daemon
     environment:
       DAGSTER_HOME: ${DAGSTER_HOME}
@@ -126,6 +125,10 @@ services:
       DAGSTER_PG_PASSWORD: ${DAGSTER_PG_PASSWORD}
       DAGSTER_PG_DB: ${DAGSTER_PG_DB}
       DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR: ${DAGSTER_LOCAL_ARTIFACT_STORAGE_DIR}
+    entrypoint:
+      - dagster-daemon
+      - run
+    restart: always
     networks:
       - dagster_network
     depends_on:
@@ -141,14 +144,15 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
-    networks:
-      - traefik-net
-      - dagster_network
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
     ports:
       - "80:80"
       - "8080:8080"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    restart: always
+    networks:
+      - traefik-net
+      - dagster_network
 
   # This service runs the dash app
   dash:
@@ -164,12 +168,13 @@ services:
       DATA_FOLDER:
       MAPBOX_ACCESS_TOKEN:
       PORT: ${DASH_PORT}
+    volumes:
+      - data-folder:${DATA_FOLDER}
     expose:
       - ${DASH_PORT}
     ports:
       - ${DASH_PORT}:${DASH_PORT}
-    volumes:
-      - data-folder:${DATA_FOLDER}
+    restart: always
     networks:
       - traefik-net
     labels:
@@ -201,12 +206,13 @@ services:
       - api:app
       - --root-path
       - /api
+    volumes:
+      - data-folder:${DATA_FOLDER}
     expose:
       - ${API_PORT}
     ports:
       - ${API_PORT}:${API_PORT}
-    volumes:
-      - data-folder:${DATA_FOLDER}
+    restart: always
     networks:
       - traefik-net
     labels:
