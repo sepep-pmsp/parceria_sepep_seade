@@ -17,6 +17,7 @@ services:
       - ${DAGSTER_PG_PORT}
     ports:
       - ${DAGSTER_PG_PORT}:${DAGSTER_PG_PORT}
+    restart: always
 
 volumes:
   dagster-db-data:
