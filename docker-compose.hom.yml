@@ -12,6 +12,7 @@ services:
       POSTGRES_DB: ${DAGSTER_PG_DB}
     volumes:
       - dagster-db-data:/var/lib/postgresql/data
+    restart: always
     networks:
       - dagster_network
 
@@ -90,6 +91,7 @@ services:
       - 3000
     ports:
       - 3000:3000
+    restart: always
     networks:
       - dagster_network
     depends_on:
@@ -126,6 +128,7 @@ services:
     entrypoint:
       - dagster-daemon
       - run
+    restart: always
     networks:
       - dagster_network
     depends_on:
@@ -146,6 +149,7 @@ services:
     ports:
       - "80:80"
       - "8080:8080"
+    restart: always
     networks:
       - traefik-net
       - dagster_network
@@ -170,6 +174,7 @@ services:
       - ${DASH_PORT}
     ports:
       - ${DASH_PORT}:${DASH_PORT}
+    restart: always
     networks:
       - traefik-net
     labels:
@@ -207,6 +212,7 @@ services:
       - ${API_PORT}
     ports:
       - ${API_PORT}:${API_PORT}
+    restart: always
     networks:
       - traefik-net
     labels:
